@@ -1,1 +1,5 @@
-<h1><strong>Home</h1><strong>
+@extends('layout.app')
+
+@section('content')
+	<h1>Home</h1>
+@endsection
