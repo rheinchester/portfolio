@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body>
-	
+	@include('inc.navbar')
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-lg-8">
