@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +18,9 @@ Route::get('/services', 'PagesController@services');
 
 Route::get('/contact', 'PagesController@contact');
 
+Route::resource('posts', 'PostsController');
+
 // Route::get('/users{id}', function($id)
 // {
 //     return 'this is users'. $id;
 // });
-
