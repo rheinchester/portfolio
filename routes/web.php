@@ -24,3 +24,6 @@ Route::resource('posts', 'PostsController');
 // {
 //     return 'this is users'. $id;
 // });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
