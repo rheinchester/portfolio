@@ -21,7 +21,7 @@ class PostsController extends Controller
         // For single post :  Post::where('title', 'Post Two')->get()
         // To use DNB      :  $posts = DB::select('SELECT * FROM posts');
         // To get all posts:  $posts = Post::all();
-        $posts = Post::orderBy('created_at','desc')->paginate(10);    //   To order posts 
+        $posts = Post::orderBy('updated_at','desc')->paginate(10);    //   To order posts 
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -75,7 +75,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.edit')->with('post', $post);
     }
 
     /**
@@ -87,7 +88,16 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'body'=>'required']);
+        
+            $post = Post::find($id);
+            $post->title = $request->input('title');
+            $post->body = $request->input('body');
+            $post->save();
+
+            return redirect('/posts')->with('success', 'Post Updated');
     }
 
     /**
@@ -98,6 +108,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('/posts')->with('success', 'Post deleted');
     }
 }
