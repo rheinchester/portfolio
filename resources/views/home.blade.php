@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -14,8 +15,36 @@
                         </div>
                     @endif
                     <div class="panel-body">
-                        <button class="btn btn-primmary"><a href="/posts/create" >Create Post</a></button>
-                        <h3>Your blog post</h3>
+                        <a href="/posts/create" ><button class="btn btn-primmary">Create Post</button></a>
+                        @if (count($posts)> 0)
+                            <h3>Your blog post</h3>
+                            <table class="table table-striped">
+                            <tr>
+                                <th>title</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            
+                            @foreach ($posts as $post)
+                                <tr>
+                                    <th>{{$post->title}}</th>
+                                    <th><a href="/posts/{{$post->id}}/edit" ><button class="btn btn-primary"> Edit</button></a></th>
+                                    <th>
+                                        {!!Form::open([
+                                            'action' => ['PostsController@destroy', $post->id],
+                                            'method' => 'POST',
+                                            'class' => 'float-right'])!!}
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
+                                        {!! Form::close() !!}
+                                    </th>
+                                </tr>   
+                            @endforeach
+                        </table>
+                        @else
+                            <h3>{{$response}}</h3>
+                        @endif
+                       
                     </div> 
                 </div>
             </div>

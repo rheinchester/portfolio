@@ -11,4 +11,13 @@ class Post extends Model
     //Changing primaryKey: |protected $primaryKey = 'id' |
     //CHanging $timestamps:|public $timedstamps = true;  |
     //_____________________|_____________________________|
-}   
+
+    protected $table = 'posts';
+    protected $primaryKey = 'id';
+    public $timestamps = true;
+
+    public function user() {
+        //Relates post to user
+        return $this->belongsTo('App\User');
+    } 
+}
