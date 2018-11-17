@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Storage;
 // use DB //(to use db library)
 
 
@@ -114,10 +115,27 @@ class PostsController extends Controller
         $this->validate($request, [
             'title'=>'required',
             'body'=>'required']);
+
+            // Handle file upload
+            if ($request->hasFile('cover_image')) {
+                // Get file name with extension
+                $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+                // Get just file name
+                $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                // Get just extension
+                $extension = $request->file('cover_image')->getClientOriginalExtension();
+                // filename to store
+                $fileNameToStore = $fileName.'_'.time().'.'.$extension;
+                // upload image
+                $path =  $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+            }
         
             $post = Post::find($id);
             $post->title = $request->input('title');
             $post->body = $request->input('body');
+            if ($request->hasFile('cover_image')) {
+                $post->cover_image = $fileNameToStore;
+            }
             $post->save();
 
             return redirect('/posts')->with('success', 'Post Updated');
@@ -132,6 +150,14 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        //only user that posted is allowed to delete
+        if (auth()->user()->id !== $post->user_id) {
+            return redirect('/posts')->with('error', 'Unauthorized Page');
+        }
+
+        if ($post->cover_image != 'noImage.jpg') {
+            Storage::delete('public/cover_images/'.$post->cover_image);
+        }
         $post->delete();
         return redirect('/posts')->with('success', 'Post deleted');
     }
