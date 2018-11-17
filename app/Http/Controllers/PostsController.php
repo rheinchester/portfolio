@@ -44,15 +44,37 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            // cover_image must be an image.
+            // nullable means image upload is optional.
+            // maxsize is 1999. if not explicitly stated,
+            // apache will give us a default size of 2mb which  is large
             'title'=>'required',
-            'body'=>'required']);
-        
+            'body'=>'required',
+            'cover_image' => 'image|nullable|max:1999' ]);  
+
+            // Handle file upload
+            if ($request->hasFile('cover_image')) {
+                // Get file name with extension
+                $fileNameWithExt = $request->file('cover_image')->getOriginalClientImage();
+                // Get just file name
+                $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                // Get just extension
+                $extension = $request->file('cover_image')->getOriginalClientExtension();
+                // filename to store
+                $fileNameToStore = $fileName.'_'.time().'.'.$extension;
+                // upload image
+                $path =  $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+
+            } else {
+                $fileNameToStore = 'noimage.jpg';
+            }
+            
             $post = new Post;
             $post->title = $request->input('title');
             $post->body = $request->input('body');
             $post->user_id = auth()->user()->id;
+            $post->cover_image = $fileNameToStore;
             $post->save();
-
             return redirect('/posts')->with('success', 'Post created');
     }
 
