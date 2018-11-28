@@ -5,8 +5,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
+import './bootstrap';
+import './now-ui-kit'
 window.Vue = require('vue');
 
 /**
