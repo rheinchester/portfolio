@@ -13942,13 +13942,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 
-// plugins for now-ui-kit
+// Plugins for now-ui-kit: we might use cdn later and see what happens.
 
 
 
 
 
-// Core JS Files
+// Core JS Files for now-ui-kit: we might use cdn later and see what happens.
 
 
 
@@ -13966,8 +13966,24 @@ window.Vue = __webpack_require__(45);
 Vue.component('example-component', __webpack_require__(48));
 
 var app = new Vue({
-  el: '#app'
+        el: '#app'
 });
+
+// Be sure to include this script later in the main body:
+
+// $(document).ready(function() {
+//   // the body of this function is in assets/js/now-ui-kit.js
+//   nowuiKit.initSliders();
+// });
+
+// function scrollToDownload() {
+
+//   if ($('.section-download').length != 0) {
+//     $("html, body").animate({
+//       scrollTop: $('.section-download').offset().top
+//     }, 1000);
+//   }
+// }
 
 /***/ }),
 /* 14 */
