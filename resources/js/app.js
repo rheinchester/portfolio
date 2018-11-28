@@ -6,7 +6,19 @@
  */
 
 import './bootstrap';
-import './now-ui-kit'
+// Plugins for now-ui-kit: we might use cdn later and see what happens.
+import './plugins/bootstrap-datepicker';
+import './plugins/bootstrap-switch';
+import './plugins/jquery.sharrre';
+import './plugins/nouislider.min';
+
+// Core JS Files for now-ui-kit: we might use cdn later and see what happens.
+import './core/bootstrap.min';
+import './core/jquery.3.2.1.min';
+import './core/popper.min';
+
+// main js for now-ui-kit
+import './now-ui-kit';
 window.Vue = require('vue');
 
 /**
@@ -20,3 +32,20 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+
+// Be sure to include this script later in the main body:
+
+        // $(document).ready(function() {
+        //   // the body of this function is in assets/js/now-ui-kit.js
+        //   nowuiKit.initSliders();
+        // });
+
+        // function scrollToDownload() {
+
+        //   if ($('.section-download').length != 0) {
+        //     $("html, body").animate({
+        //       scrollTop: $('.section-download').offset().top
+        //     }, 1000);
+        //   }
+        // }
+    
