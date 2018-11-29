@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     @include('inc.header')    
-        <body class="index-page sidebar-collapse">
             <div class="flex-center position-ref full-height">
                 @if (Route::has('login'))
                     <div class="top-right links">
@@ -1279,6 +1278,3 @@
                   <!--  End Modal -->
               
             @include('inc.footer')
-        </div>
-    </body>
-</html>
