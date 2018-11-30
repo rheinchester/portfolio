@@ -6,13 +6,13 @@
  */
 
 import './bootstrap';
-// Plugins for now-ui-kit: we might use cdn later and see what happens.
+// Plugins for now-ui-kit
 import './plugins/bootstrap-datepicker';
 import './plugins/bootstrap-switch';
 import './plugins/jquery.sharrre';
 import './plugins/nouislider.min';
 
-// Core JS Files for now-ui-kit: we might use cdn later and see what happens.
+// Core JS Files for now-ui-kit
 import './core/bootstrap.min';
 import './core/jquery.3.2.1.min';
 import './core/popper.min';

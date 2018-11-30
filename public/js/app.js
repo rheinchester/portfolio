@@ -13942,13 +13942,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 
-// Plugins for now-ui-kit: we might use cdn later and see what happens.
+// Plugins for now-ui-kit
 
 
 
 
 
-// Core JS Files for now-ui-kit: we might use cdn later and see what happens.
+// Core JS Files for now-ui-kit
 
 
 
