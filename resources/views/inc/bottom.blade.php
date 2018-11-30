@@ -1,4 +1,3 @@
-    {{-- @include('inc.footer') --}}
     </div>
     <!-- ck-editors plugin -->
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>

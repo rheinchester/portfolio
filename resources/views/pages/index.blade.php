@@ -4,17 +4,19 @@
 			<div class="page-header-image" data-parallax="true" style="background-image: url('/storage/cover_images/awesome-pictures-32-1.jpg');"></div>
       <div class="container">
         <div class="photo-container">
-          <img src="/storage/cover_images/ryan.jpg" alt="">
+          <img src= '/storage/cover_images/ryan.jpg' alt="">
         </div>
-        <h3 class="title">Ryan Scheinder</h3>
+        {{-- Name --}}
+        <h3 class="title">Jacob okoro</h3>
+        {{-- Occupation  --}}
         <p class="category">Photographer</p>
+        {{-- Brief intro --}}
         <div class="content">
-            <div class="social-description">
-              <h2>26</h2>
-              <p>Comments</p>
-            </div>
-
+          {{-- Title --}}
+          <h2>Hello, Nice to meet you</h2>
+          
       </div>
     </div>
+	</div>
 @endsection
 	

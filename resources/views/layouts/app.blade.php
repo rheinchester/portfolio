@@ -1,8 +1,8 @@
 @include('inc.header')
   @include('inc.navbar')
   {{-- why is the main tag here? --}}
-    <main>
+    {{-- <main> --}}
       @include('inc.messages')
       @yield('content')
-    </main>
+    {{-- </main> --}}
 @include('inc.bottom')
