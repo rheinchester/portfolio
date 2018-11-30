@@ -17,5 +17,6 @@
   {{-- Styles  --}}
   <link href="{{asset('css/app.css')}} " rel="stylesheet" />
 </head>
-<body class="index-page sidebar-collapse">
-    <div class="wrapper">
+{{-- we might use blade if --}}
+<body class="profile-page sidebar-collapse"> 
+    

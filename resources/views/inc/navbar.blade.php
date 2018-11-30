@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-primary fixed-top " color-on-scroll="400">
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="400">
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="{{ url('/') }}">
@@ -56,3 +56,5 @@
       </div>
     </div>
   </nav>
+  <!-- End Navbar -->
+  <div class="wrapper">
