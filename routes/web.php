@@ -32,6 +32,10 @@ Route::get('/hello', function()
 {
     return view('helloworld');
 });
+Route::get('/index1', function()
+{
+    return view('pages/index1'); //we were changing routes before the interuption
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

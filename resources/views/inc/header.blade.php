@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -17,6 +15,3 @@
   {{-- Styles  --}}
   <link href="{{asset('css/app.css')}} " rel="stylesheet" />
 </head>
-{{-- we might use blade if --}}
-<body class="profile-page sidebar-collapse"> 
-    
