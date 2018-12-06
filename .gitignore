@@ -13,3 +13,5 @@ yarn-error.log
 .env
 .phpunit.result.cache
 public/vendor/unisharp
+Notes.txt
+resources/material-dashboard/

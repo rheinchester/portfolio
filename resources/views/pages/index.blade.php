@@ -4,10 +4,10 @@
 			<div class="page-header-image" data-parallax="true" style="background-image: url('/storage/cover_images/awesome-pictures-32-1.jpg');"></div>
       <div class="container">
         <div class="content-center">
-          <div class="photo-container">
-            <img src= '/storage/cover_images/ryan.jpg' alt="">
+          <div class="photo-container" style="border: 2px solid #EEEEEE;" >
+            <img  src= '/storage/cover_images/ryan.jpg' alt="">
           </div>
-          <h3 class="title">Jacob okoro</h3>
+          <h3 class="title">{{auth()->user()->name}}</h3>
           <p class="category">Photographer</p>
           <div class="content">
               <h2>Hello, Nice to meet you</h2>
@@ -18,7 +18,7 @@
   <div class="main">
     <div class="section" style="background-color: #EEEEEE;">
       <div class="col-md-10 ml-auto col-xl-6 mr-auto">
-          <p class="category">About me</p>
+          <h5 class="category">About me</h5>
           <!-- Nav tabs -->
           <div class="card">
               <!-- padding: 0.75rem 1.25rem -->
@@ -72,6 +72,9 @@
     </div>
     <div class="section section-about-us">
       <div class="container">
+        <h3 class="title text-center">
+            <i class="now-ui-icons ui-2_settings-90"></i>      What i've done recently    <i class="now-ui-icons ui-2_settings-90"></i>
+        </h3>
         <div class="separator separator-primary"></div>
         <div class="section-story-overview">
           <div class="row">
