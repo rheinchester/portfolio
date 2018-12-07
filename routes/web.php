@@ -9,33 +9,64 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/userProfile', 'userProfile@index')->name('home');
+
 
 Route::get('/', 'PagesController@index');
-
-Route::get('/about', 'PagesController@about');
-
-Route::get('/services', 'PagesController@services');
-
 Route::get('/contact', 'PagesController@contact');
 
 Route::resource('posts', 'PostsController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Route::get('/users{id}', function($id)
 // {
 //     return 'this is users'. $id;
 // });
-Route::get('/welcome', function()
-{
-    return view('welcome');
-});
-Route::get('/hello', function()
-{
-    return view('helloworld');
-});
-Route::get('/index1', function()
-{
-    return view('pages/index1'); //we were changing routes before the interuption
-});
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/welcome', function()
+// {
+//     return view('welcome');
+// });
+// Route::get('/hello', function()
+// {
+//     return view('helloworld');
+// });
