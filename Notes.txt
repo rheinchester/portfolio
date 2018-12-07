@@ -1,0 +1,39 @@
+To correct:
+our show page has error
+
+To Do:
+Ask user before we delete
+
+Done:
+1)  We have created Work Model
+2)  We have created userprofileindex controller
+
+Plan:
+Create work and userprofile compartmentally and join them together in pages.index
+We might rename pages.index to gallery.index
+
+
+1) compile assets
+2) add to index page
+3) complete stuff
+
+
+
+
+we might add the following to our list of javascript plugins
+// import '../material-dashboard/assets/js/plugins/arrive.min.js';
+// import '../material-dashboard/assets/js/plugins/bootstrap-selectpicker.js';
+// import '../material-dashboard/assets/js/plugins/bootstrap-tagsinput.js';
+// import '../material-dashboard/assets/js/plugins/jasny-bootstrap.min.js';
+// import '../material-dashboard/assets/js/plugins/jquery.bootstrap-wizard.js';
+// import '../material-dashboard/assets/js/plugins/jquery.validate.min.js';
+// import '../material-dashboard/assets/js/plugins/perfect-scrollbar.jquery.min.js';
+// import '../material-dashboard/assets/js/plugins/sweetalert2.js';
+
+// The following modules were not found
+// import '../material-dashboard/assets/js/plugins/fullcalender.min.js';        not found    
+// import '../material-dashboard/assets/js/plugins/jquery.tagsinput.min.js';    not found
+// import '../material-dashboard/assets/js/plugins/jquery.dataTables.min.js';   not found
+// import '../material-dashboard/assets/js/plugins/moment.min.js';
+// import '../material-dashboard/assets/js/plugins/bootstrap-datetimepicker.min.js';
+// import '../material-dashboard/assets/js/plugins/nouislider.min.js';          already in now ui kit
