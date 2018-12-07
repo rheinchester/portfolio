@@ -7,7 +7,7 @@
           <div class="photo-container" style="border: 2px solid #EEEEEE;" >
             <img  src= '/storage/cover_images/ryan.jpg' alt="">
           </div>
-          <h3 class="title">{{auth()->user()->name}}</h3>
+          <h3 class="title">Jacob okoro</h3>
           <p class="category">Photographer</p>
           <div class="content">
               <h2>Hello, Nice to meet you</h2>
