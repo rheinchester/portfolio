@@ -1,26 +1,59 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Create posts</h1>
-    {!! Form::open([
-                'action' => 'PostsController@store',
-                'method' =>'POST',
-                'enctype' =>'multipart/form-data'])!!}
+    <section class="container">
+        <h1>Create Profile</h1>
+        {!! Form::open([
+            'action' => 'UserProfilesController@store',
+            'method' =>'POST',
+            'enctype' =>'multipart/form-data'])!!}
         <div class="form-group">
-            {{Form::label('title', 'Title')}}
-            {{Form::text('title', '', ['class' => 'form-control', 'placeholder'=>'Title'])}}
+            {{Form::label('', '')}}
+            {{-- 'name', 'value', 'attributes' --}}
+            {{Form::text('full_name', '', ['class' => 'form-control', 'placeholder'=>'Full Name'])}}
+        </div>
+        
+        <div class="form-group">
+            {{Form::label('', '')}}
+            {{-- 'name', 'value', 'attributes' --}}
+            {{Form::text('occupation', '', ['class' => 'form-control', 'placeholder'=>'Occupation'])}}
         </div>
 
         <div class="form-group">
-            {{Form::label('body', 'Body')}}
-            {{Form::textarea('body', '', [ 'id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder'=>'Body Text'])}}
+            {{Form::label('', '')}}
+            {{Form::text('short_message', '', ['class' => 'form-control', 'placeholder'=>'Short message'])}}
         </div>
         
         <div class="form-group">
-                {{Form::file('cover_image')}}
+            {{Form::label('', '')}}
+            {{Form::textarea('short_bio', '', [ 'class' => 'form-control', 'class' => 'form-control', 'placeholder'=>'Short bio'])}}
         </div>
-            
+        
+        <div class="form-group">
+            {{Form::label('', '')}}
+            {{Form::textarea('skills', '', [ 'class' => 'form-control', 'class' => 'form-control', 'placeholder'=>'skills'])}}
+        </div>
+
+
+        <div class="form-group">
+            {{Form::label('', '')}}
+            {{Form::textarea('career_stats', '', [ 'class' => 'form-control', 'class' => 'form-control', 'placeholder'=>'Career stats'])}}
+        </div>
+
+        <div class="form-group">
+            {{Form::label('', '')}}
+            {{Form::textarea('tools', '', [ 'class' => 'form-control', 'class' => 'form-control', 'placeholder'=>'Tools'])}}
+        </div>
+        <div class="form-group">
+            {{Form::file('cover_image')}}
+        </div>
+
+        <div class="form-group">
+            {{Form::file('cover_image')}}
+        </div>
+        
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
         
-    {!! Form::close() !!}
-@endsection
+        {!! Form::close() !!}
+    </section>
+    @endsection

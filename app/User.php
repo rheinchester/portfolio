@@ -33,10 +33,4 @@ class User extends Authenticatable
         //Relates user to post
        return $this->hasMany('App\Post');
     }
-
-
-    public function works(){
-        // Relates user to works
-        return $this->hasMany('App\Works');
-    }
 }

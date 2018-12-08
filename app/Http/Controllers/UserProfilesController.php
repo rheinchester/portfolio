@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\UserProfile;
 class UserProfilesController extends Controller
 {
     /**
@@ -23,7 +23,7 @@ class UserProfilesController extends Controller
      */
     public function create()
     {
-        //
+        return view('userProfile.create');
     }
 
     /**
@@ -34,7 +34,25 @@ class UserProfilesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'full_name' =>'required',
+            'occupation' =>'required'
+        ]);
+        $profile_pic = 'profile_pic';
+        $background_image = 'background_image';
+        $profile = new UserProfile;
+        $profile->full_name = $request->input('full_name');
+        $profile->occupation = $request->input('occupation');
+        $profile->short_message = $request->input('short_message');
+        $profile->short_bio = $request->input('short_bio');
+        $profile->skills = $request->input('skills');
+        $profile->career_stats = $request->input('career_stats');
+        $profile->tools = $request->input('tools');
+        $profile->id = auth()->user()->id;
+        $profile->profile_pic = Controller::upload_image($request, $profile_pic); 
+        $profile->background_image = Controller::upload_image($request, $background_image); 
+        $profile->save();
+        return redirect('userProfile.index')->with('success', 'Post created');
     }
 
     /**
