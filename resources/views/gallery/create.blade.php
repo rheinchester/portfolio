@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Create posts</h1>
-    {{-- {!! Form::open([
-                'action' => 'PostsController@store',
+    <h1>Create Gallery</h1>
+    {!! Form::open([
+                'action' => 'GalleriesController@store',
                 'method' =>'POST',
                 'enctype' =>'multipart/form-data'])!!}
         <div class="form-group">
@@ -22,5 +22,5 @@
             
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
         
-    {!! Form::close() !!} --}}
+    {!! Form::close() !!}
 @endsection
