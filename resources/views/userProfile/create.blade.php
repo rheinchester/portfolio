@@ -26,30 +26,30 @@
         
         <div class="form-group">
             {{Form::label('', '')}}
-            {{Form::textarea('short_bio', '', [ 'class' => 'form-control', 'class' => 'form-control', 'placeholder'=>'Short bio'])}}
+            {{Form::textarea('short_bio', '', ['class' => 'form-control', 'placeholder'=>'Short bio'])}}
         </div>
         
         <div class="form-group">
             {{Form::label('', '')}}
-            {{Form::textarea('skills', '', [ 'class' => 'form-control', 'class' => 'form-control', 'placeholder'=>'skills'])}}
+            {{Form::textarea('skills', '', ['class' => 'form-control', 'placeholder'=>'skills'])}}
         </div>
 
 
         <div class="form-group">
             {{Form::label('', '')}}
-            {{Form::textarea('career_stats', '', [ 'class' => 'form-control', 'class' => 'form-control', 'placeholder'=>'Career stats'])}}
+            {{Form::textarea('career_stats', '', ['class' => 'form-control', 'placeholder'=>'Career stats'])}}
         </div>
 
         <div class="form-group">
             {{Form::label('', '')}}
-            {{Form::textarea('tools', '', [ 'class' => 'form-control', 'class' => 'form-control', 'placeholder'=>'Tools'])}}
+            {{Form::textarea('tools', '', ['class' => 'form-control', 'placeholder'=>'Tools'])}}
         </div>
         <div class="form-group">
-            {{Form::file('cover_image')}}
+            {{Form::file('new_pic')}}
         </div>
 
         <div class="form-group">
-            {{Form::file('cover_image')}}
+            {{Form::file('background_image')}}
         </div>
         
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}

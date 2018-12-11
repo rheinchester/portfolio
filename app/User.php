@@ -33,4 +33,16 @@ class User extends Authenticatable
         //Relates user to post
        return $this->hasMany('App\Post');
     }
+    
+    public function userProfile()
+    {
+        // relates the user to his profile
+        return $this->hasOne('App\UserProfile');
+    }
+
+    public function gallery()
+    {
+        // Relates user to his galleries
+        return $this->hasMany('App\Gallery');
+    }
 }

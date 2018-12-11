@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
-use Illuminate\Support\Facades\Storage; //what does this do?
+use Illuminate\Support\Facades\Storage; //Why did we add this line?
 // use DB -->(to use db library)
 
 
