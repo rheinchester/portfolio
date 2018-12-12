@@ -119,14 +119,14 @@ class UserProfilesController extends Controller
         $profile->career_stats = $request->input('career_stats');
         $profile->tools = $request->input('tools');
         if($request->hasFile($profile_pic)){
-             $post->profile_pic = Controller::upload_image($request, $profile_pic);
+             $profile->profile_pic = Controller::upload_image($request, $profile_pic);
         }
         if ($request->hasFile($background_image)) {
-            $post->background_image = Controller::upload_image($request, $background_image);
+            $profile->background_image = Controller::upload_image($request, $background_image);
         }
         $profile->save();
         $data = array('profile' => $profile, 
-                        'success'=> 'Post Updated');
+                        'success'=> 'profile Updated');
         return redirect('/userProfile')->with($data);
     }
 
@@ -139,14 +139,14 @@ class UserProfilesController extends Controller
     public function destroy($id)
     {
         $profile = Profile::find(auth()->user()->id);
-        //only user that posted is allowed to delete
+        //only user that profileed is allowed to delete
         if (auth()->user()->id !== $profile->user_id) {
-            return redirect('/posts')->with('error', 'Unauthorized Page');
+            return redirect('/profiles')->with('error', 'Unauthorized Page');
         }
         if ($profile->cover_image != 'noImage.jpg') {
             Storage::delete('public/cover_images/'.$profile->cover_image);
         }
-        $post->delete();
-        return redirect('/posts')->with('success', 'Post deleted');
+        $profile->delete();
+        return redirect('/profiles')->with('success', 'profile deleted');
     }
 }

@@ -6,8 +6,7 @@
         <li> {{$profile->tools}}</li>
         <li>{{$profile->skills }}</li>
         <li>{{$profile->id }}</li>
-        <li>{{$profile->profile_pic}}</li>
-        <li>{{$profile->background_image}}</li>
+        <img src="/storage/cover_image/{{$profile->profile_pic}}" alt="">
     </ul>
     <a href="/userProfile/{{$profile->id}}/edit" class="btn btn-default">Edit Profile</a>
 @endsection
