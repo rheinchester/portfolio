@@ -10,32 +10,73 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
+// Authentication routes including register and login routes
+Auth::routes();
+// landing page controller
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/about', 'PagesController@about');
+// Pages Controller including user index page and contact page
+// Route::get('/', 'PagesController@index');               //landing page
+// Route::get('/{id}', 'PagesController@index');           //personal page page
+// Route::get('/contact', 'PagesController@contact');      //user contact page
 
-Route::get('/services', 'PagesController@services');
 
-Route::get('/contact', 'PagesController@contact');
+// Pages Controller including user index page and contact page
+Route::resource('pages','PagesController');
 
+// route for posts
 Route::resource('posts', 'PostsController');
+
+// route for userprofile including full CRUD resources
+Route::resource('userProfile', 'UserProfilesController');
+
+// route for userprofile including full CRUD resources
+Route::resource('gallery', 'GalleriesController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/userProfile', 'userProfile@index')->name('home');
 
 // Route::get('/users{id}', function($id)
 // {
 //     return 'this is users'. $id;
 // });
-Route::get('/welcome', function()
-{
-    return view('welcome');
-});
-Route::get('/hello', function()
-{
-    return view('helloworld');
-});
-Route::get('/index1', function()
-{
-    return view('pages/index1'); //we were changing routes before the interuption
-});
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/welcome', function()
+// {
+//     return view('welcome');
+// });
+// Route::get('/hello', function()
+// {
+//     return view('helloworld');
+// });

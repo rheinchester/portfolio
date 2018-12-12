@@ -3,45 +3,89 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\UserProfile;
+use App\Gallery;
 
 class PagesController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-       $indexTitle = 'This is the home page';
-       $data = array(
-        'title' => $indexTitle,
-    );
-       return view('pages.index')->with($data);
+        $data = array(
+         
+     );
+        return view('pages.index')->with($data);
     }
 
-    public function about()
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-       $aboutTitle = 'This is the about page';
-       $data = array(
-        'title' => $aboutTitle,
-    );
-       return view('pages.about')->with($data);
+        //
     }
 
-    public function contact()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-       $contactTitle = 'This is the contact page';
-       $data = array(
-        'title' => $contactTitle,
-    );
-       return view('pages.contact')->with($data);
+        //
     }
 
-    public function services()  
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
-        $servicesTitle = 'This is the services page';
-        $data = array(  
-            'title' =>$servicesTitle,
-            'response' =>'Please insert Data',
-            'skills'=>['PHP', 'Java', 'Javascript', 'Python']
-            );
-       
-       return view('pages.services')->with($data);
+        $profile =  UserProfile::find($id);
+        $profile->galleries = Gallery::all();
+        return view('pages.index')->with('profile', $profile);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

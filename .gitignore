@@ -13,4 +13,9 @@ yarn-error.log
 .env
 .phpunit.result.cache
 public/vendor/unisharp
+<<<<<<< HEAD
 resources/material-dashboard
+=======
+Notes.txt
+resources/material-dashboard/
+>>>>>>> nuk-branch

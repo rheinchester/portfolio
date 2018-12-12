@@ -8,8 +8,8 @@ use App\User;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
+     * Create a new controller instance: With thes line, anything that ism't authenticated is blocked
+     * 
      * @return void
      */
     public function __construct()
