@@ -16,8 +16,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Pages Controller including user index page and contact page
-Route::get('/', 'PagesController@index');
-Route::get('/contact', 'PagesController@contact');
+// Route::get('/', 'PagesController@index');               //landing page
+// Route::get('/{id}', 'PagesController@index');           //personal page page
+// Route::get('/contact', 'PagesController@contact');      //user contact page
+
+
+// Pages Controller including user index page and contact page
+Route::resource('pages','PagesController');
 
 // route for posts
 Route::resource('posts', 'PostsController');

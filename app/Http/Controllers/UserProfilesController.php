@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\UserProfile;
+use App\Gallery;
+
 use Illuminate\Support\Facades\Storage; 
 class UserProfilesController extends Controller
 {
@@ -82,7 +84,7 @@ class UserProfilesController extends Controller
         // return $profile ;
         return view('userProfile.show')->with('profile',$profile);
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
