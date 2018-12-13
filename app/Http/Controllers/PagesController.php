@@ -18,7 +18,7 @@ class PagesController extends Controller
         $data = array(
          
      );
-        return view('pages.index')->with($data);
+        return view('doNotSave')->with($data);
     }
 
     /**
@@ -77,6 +77,15 @@ class PagesController extends Controller
     {
         //
     }
+
+    
+    public function profile($id)//show personal profile of user
+    {
+        $profile =  UserProfile::find($id);
+        $profile->galleries = Gallery::all();
+        return view('pages.index')->with('profile', $profile);
+    }
+
 
     /**
      * Remove the specified resource from storage.
