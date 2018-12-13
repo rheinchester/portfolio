@@ -13,5 +13,11 @@ class UserProfile extends Model
     public function user() {
         //Relates post to user
         return $this->belongsTo('App\User');
-    } 
+    }
+
+    public function gallery()
+    {
+        // Relates user to his galleries
+        return $this->hasMany('App\Gallery');
+    }
 }
