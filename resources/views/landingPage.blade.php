@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -41,8 +40,8 @@
         </div>
       </div>
       <div class="navbar-translate">
-        <a class="navbar-brand" href="https://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
-          Now Ui Kit
+        <a class="navbar-brand" href="{{asset('/')}}"  rel="tooltip" title="Powered by palmline inc." data-placement="bottom" >
+          Palmport
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar top-bar"></span>
@@ -53,28 +52,10 @@
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="../index.html">Back to Kit</a>
+            <a class="nav-link" href="{{ __('login') }}">Log in</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/creativetimofficial/now-ui-kit/issues">Have an issue?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
-              <i class="fab fa-twitter"></i>
-              <p class="d-lg-none d-xl-none">Twitter</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
-              <i class="fab fa-facebook-square"></i>
-              <p class="d-lg-none d-xl-none">Facebook</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-              <i class="fab fa-instagram"></i>
-              <p class="d-lg-none d-xl-none">Instagram</p>
-            </a>
+            <a class="nav-link" href="{{ __('register') }}">Sign up</a>
           </li>
         </ul>
       </div>
@@ -83,21 +64,15 @@
   <!-- End Navbar -->
   <div class="wrapper">
     <div class="page-header page-header-small">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('/storage/cover_images/bg6.jpg ');">
+      <div class="page-header-image" data-parallax="true" style="background-image: url('{{asset('storage/cover_images/istock-471243406-portfolio-header.jpg')}}');">
       </div>
       <div class="content-center">
+        <!-- Padding correction -->
+        @include('inc.padding') 
         <div class="container">
-          <h1 class="title">This is our great company.</h1>
+          <h1 class="title">Build an Awesome Portfolio Here </h1>
           <div class="text-center">
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-facebook-square"></i>
-            </a>
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-google-plus"></i>
-            </a>
+            <h3>Show people what you can do</h3>
           </div>
         </div>
       </div>
@@ -106,29 +81,29 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">Who we are?</h2>
-            <h5 class="description">According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDClead scentist, puts the potentially record low maximum sea ice extent tihs year down to low ice extent in the Pacific and a late drop in ice extent in the Barents Sea.</h5>
+            <h2 class="title">About Palmport</h2>
+            <h5 class="description">Are you an artisan, engineer or anyone involved in the visual arts? Are you dying for people to see what you can do? You can do so on our platform for free. All you need do is register. </h5>
           </div>
         </div>
         <div class="separator separator-primary"></div>
         <div class="section-story-overview">
           <div class="row">
             <div class="col-md-6">
-              <div class="image-container image-left" style="background-image: url('../assets/img/login.jpg')">
+              <div class="image-container image-left" style="background-image: url('{{asset('storage/cover_images/avatar_1544616262.jpg')}}')">
                 <!-- First image on the left side -->
-                <p class="blockquote blockquote-primary">"Over the span of the satellite record, Arctic sea ice has been declining significantly, while sea ice in the Antarctichas increased very slightly"
+                <p class="blockquote blockquote-primary">"Together we can change the world"
                   <br>
                   <br>
-                  <small>-NOAA</small>
+                  <small>-Steve Jobs</small>
                 </p>
               </div>
               <!-- Second image on the left side of the article -->
-              <div class="image-container" style="background-image: url('../assets/img/bg3.jpg')"></div>
+              <div class="image-container" style="background-image: url('{{asset('storage/cover_images/awesome-pictures-32-1_1544368450_1544495905.jpg')}}')"></div>
             </div>
             <div class="col-md-5">
               <!-- First image on the right side, above the article -->
-              <div class="image-container image-right" style="background-image: url('../assets/img/bg1.jpg')"></div>
-              <h3>So what does the new record for the lowest level of winter ice actually mean</h3>
+              <div class="image-container image-right" style="background-image: url('{{asset('storage/cover_images/avatar_1543792904.jpg')}}')"></div>
+              <h3>Do you want pages like these</h3>
               <p>The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever happens with climate change. Even if the Arctic continues to be one of the fastest-warming regions of the world, it will always be plunged into bitterly cold polar dark every winter. And year-by-year, for all kinds of natural reasons, there’s huge variety of the state of the ice.
               </p>
               <p>
@@ -141,54 +116,13 @@
         </div>
       </div>
     </div>
-    <div class="section section-team text-center">
-      <div class="container">
-        <h2 class="title">Here is our team</h2>
-        <div class="team">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="team-player">
-                <img src="../assets/img/avatar.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
-                <h4 class="title">Romina Hadid</h4>
-                <p class="category text-primary">Model</p>
-                <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                  <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-instagram"></i></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-facebook-square"></i></a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="team-player">
-                <img src="../assets/img/ryan.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
-                <h4 class="title">Ryan Tompson</h4>
-                <p class="category text-primary">Designer</p>
-                <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                  <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="team-player">
-                <img src="../assets/img/eva.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
-                <h4 class="title">Eva Jenner</h4>
-                <p class="category text-primary">Fashion</p>
-                <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                  <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-google-plus"></i></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-youtube"></i></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {{-- <div class="section section-team text-center">
+      
+    </div> --}}
     <div class="section section-contact-us text-center">
       <div class="container">
-        <h2 class="title">Want to work with us?</h2>
-        <p class="description">Your project is very important to us.</p>
+        <h2 class="title">Want a more personalised page?</h2>
+        <p class="description">Contact us</p>
         <div class="row">
           <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
             <div class="input-group input-lg">
@@ -219,32 +153,11 @@
     </div>
     <footer class="footer footer-default">
       <div class="container">
-        <nav>
-          <ul>
-            <li>
-              <a href="https://www.creative-tim.com">
-                Creative Tim
-              </a>
-            </li>
-            <li>
-              <a href="http://presentation.creative-tim.com">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="http://blog.creative-tim.com">
-                Blog
-              </a>
-            </li>
-          </ul>
-        </nav>
         <div class="copyright" id="copyright">
           &copy;
           <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-          </script>, Designed by
-          <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-          <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+          </script>, Designed by Palmline inc.
         </div>
       </div>
     </footer>

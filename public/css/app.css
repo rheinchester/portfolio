@@ -25779,6 +25779,8 @@ Created using IcoMoon - icomoon.io
   }
 }
 
+/* For extra padding at the top */
+
 #wrapper {
   min-height: 100%;
   position: relative;
@@ -25790,7 +25792,6 @@ Created using IcoMoon - icomoon.io
 
 #content {
   padding-bottom: 100px;
-  /* Height of the footer element */
 }
 
 #footer {

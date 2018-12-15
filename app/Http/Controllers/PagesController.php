@@ -18,7 +18,7 @@ class PagesController extends Controller
         $data = array(
          
      );
-        return view('doNotSave')->with($data);
+        return view('landingPage')->with($data);
     }
 
     /**
