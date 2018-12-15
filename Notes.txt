@@ -17,6 +17,20 @@ We might rename pages.index to gallery.index
 2) add to index page
 3) complete stuff
 
+<div id="wrapper">
+    
+    <div id="header">
+    </div><!-- #header -->
+    
+    <div id="content">
+    </div><!-- #content -->
+    
+    <div id="footer">
+    </div><!-- #footer -->
+    
+</div><!-- #wrapper -->
+
+
 
 
 

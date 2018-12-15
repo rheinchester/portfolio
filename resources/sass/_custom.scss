@@ -1,0 +1,19 @@
+/* For extra padding at the top */
+#wrapper {
+    min-height:100%;
+    position:relative;
+  }
+  #header {
+    padding:10px;
+  }
+  #content {
+    padding-bottom:100px; 
+  }
+  #footer {
+    width:100%;
+    height:0px;
+    position:absolute;
+    bottom:0;
+    left:0;
+  }
+  

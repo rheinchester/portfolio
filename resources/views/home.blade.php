@@ -2,6 +2,7 @@
 
 {{-- This is where we will keep our landing page --}}
 @section('content')
+@include('inc.padding')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
