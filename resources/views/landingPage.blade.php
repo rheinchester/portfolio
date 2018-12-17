@@ -21,7 +21,7 @@
 <body class="landing-page sidebar-collapse">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
-    <div class="container">
+    <div class="container-fluid">
       <div class="dropdown button-dropdown">
         <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
           <span class="button-bar"></span>
@@ -55,7 +55,10 @@
             <a class="nav-link" href="{{ __('login') }}">Log in</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ __('register') }}">Sign up</a>
+            <a class="nav-link" href="{{ __('register') }}">Register</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ __('register') }}">Contact</a>
           </li>
         </ul>
       </div>

@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="navbar-translate">
-                <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
+                    <a class="navbar-brand" href="{{asset('/')}}"  rel="tooltip" title="Powered by palmline inc." data-placement="bottom" >
                     Palmport
                 </a>
                 <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
