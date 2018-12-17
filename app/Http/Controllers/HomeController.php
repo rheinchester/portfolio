@@ -30,7 +30,7 @@ class HomeController extends Controller
         $user = User::find($user_id); //For the user id fetch user data
         $data = array(
             'title' =>'Services',
-            'response' =>'There ara no posts yet',
+            'response' =>'There are no posts yet',
             'posts'=> $user->posts
         );
         return view('home')->with($data);
