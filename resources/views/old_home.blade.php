@@ -16,23 +16,23 @@
                         </div>
                     @endif
                     <div class="panel-body">
-                        <a href="/gallery/create" ><button class="btn btn-primmary">Create Gallery</button></a>
-                        @if (count($galleries) > 0)
-                            <h3>Your Gallery</h3>
+                        <a href="/posts/create" ><button class="btn btn-primmary">Create Post</button></a>
+                        @if (count($posts)> 0)
+                            <h3>Your blog post</h3>
                             <table class="table table-striped">
                             <tr>
-                                <th>Title</th>
+                                <th>title</th>
                                 <th></th>
                                 <th></th>
                             </tr>
                             
-                            @foreach ($galleries as $gallery)
+                            @foreach ($posts as $post)
                                 <tr>
-                                    <th>{{$gallery->title}}</th>
-                                    <th><a href="/gallery/{{$gallery->id}}/edit" ><button class="btn btn-primary"> Edit</button></a></th>
+                                    <th>{{$post->title}}</th>
+                                    <th><a href="/posts/{{$post->id}}/edit" ><button class="btn btn-primary"> Edit</button></a></th>
                                     <th>
                                         {!!Form::open([
-                                            'action' => ['GalleriesController@destroy', $gallery->id],
+                                            'action' => ['PostsController@destroy', $post->id],
                                             'method' => 'POST',
                                             'class' => 'float-right'])!!}
                                             {{Form::hidden('_method', 'DELETE')}}

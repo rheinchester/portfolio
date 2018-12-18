@@ -61,7 +61,9 @@ class GalleriesController extends Controller
             $gallery->user_id = auth()->user()->id;
             $gallery->cover_image = Controller::upload_image($request, $cover_image); 
             $gallery->save();
-            return $gallery;
+            $data = array('success'=> 'Gallery created',
+                        'gallery'=> $gallery);
+            return redirect('/home')->with($data);
     }
 
     /**
@@ -108,9 +110,9 @@ class GalleriesController extends Controller
                 $gallery->cover_image = Controller::upload_image($request, $cover_image);
             }
             $gallery->save();
-            $data = array('success'=> 'Gallery created',
+            $data = array('success'=> 'Gallery Edited',
                         'gallery'=> $gallery);
-            return $gallery;
+            return redirect('/home')->with($data);
     }
 
     /**
@@ -129,7 +131,8 @@ class GalleriesController extends Controller
         if ($gallery->cover_image != 'noImage.jpg') {
             Storage::delete('public/cover_images/'.$gallery->cover_image);
         }
+        $deleted_gallery = $gallery;
         $gallery->delete();
-        return redirect('/gallery')->with('success', 'Gallery deleted');
+        return redirect('/home')->with('success', 'Gallery deleted');
     }
 }
