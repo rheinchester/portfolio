@@ -17,7 +17,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Pages Controller including user index page and contact page
 Route::get('/', 'PagesController@index');               //landing page
-Route::get('/{id}', 'PagesController@profile');           //personal page page
 // Route::get('/contact', 'PagesController@contact');      //user contact page
 
 
@@ -32,6 +31,7 @@ Route::resource('userProfile', 'UserProfilesController');
 
 // route for userprofile including full CRUD resources
 Route::resource('gallery', 'GalleriesController');
+Route::get('/{id}', 'PagesController@profile');           //personal page page
 
 
 

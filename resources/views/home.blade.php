@@ -27,7 +27,8 @@
                             </tr>
                             
                             @foreach ($galleries as $gallery)
-                                <tr>
+                                {{-- @if (Auth::user()->id == $gallery->user->id) --}}
+                                    <tr>
                                     <th>{{$gallery->title}}</th>
                                     <th><a href="/gallery/{{$gallery->id}}/edit" ><button class="btn btn-primary"> Edit</button></a></th>
                                     <th>
@@ -39,7 +40,8 @@
                                             {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
                                         {!! Form::close() !!}
                                     </th>
-                                </tr>   
+                                </tr>    
+                                {{-- @endif --}}
                             @endforeach
                         </table>
                         @else
