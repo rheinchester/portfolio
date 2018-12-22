@@ -41,7 +41,10 @@ Route::get('admin/home', function()
     return view('admin.home');
 })->name('post');
 
-
+Route::get('user/home', function()
+{
+    return view('user.home');
+})->name('post');
 
 
 
