@@ -36,10 +36,10 @@ Route::get('/{id}', 'PagesController@profile');           //personal page page
 
 
 
-
-
-
-
+Route::get('admin/home', function()
+{
+    return view('admin.home');
+})->name('post');
 
 
 
