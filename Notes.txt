@@ -17,37 +17,8 @@ We might rename pages.index to gallery.index
 2) add to index page
 3) complete stuff
 
-<div id="wrapper">
-    
-    <div id="header">
-    </div><!-- #header -->
-    
-    <div id="content">
-    </div><!-- #content -->
-    
-    <div id="footer">
-    </div><!-- #footer -->
-    
-</div><!-- #wrapper -->
 
 
 
 
 
-we might add the following to our list of javascript plugins
-// import '../material-dashboard/assets/js/plugins/arrive.min.js';
-// import '../material-dashboard/assets/js/plugins/bootstrap-selectpicker.js';
-// import '../material-dashboard/assets/js/plugins/bootstrap-tagsinput.js';
-// import '../material-dashboard/assets/js/plugins/jasny-bootstrap.min.js';
-// import '../material-dashboard/assets/js/plugins/jquery.bootstrap-wizard.js';
-// import '../material-dashboard/assets/js/plugins/jquery.validate.min.js';
-// import '../material-dashboard/assets/js/plugins/perfect-scrollbar.jquery.min.js';
-// import '../material-dashboard/assets/js/plugins/sweetalert2.js';
-
-// The following modules were not found
-// import '../material-dashboard/assets/js/plugins/fullcalender.min.js';        not found    
-// import '../material-dashboard/assets/js/plugins/jquery.tagsinput.min.js';    not found
-// import '../material-dashboard/assets/js/plugins/jquery.dataTables.min.js';   not found
-// import '../material-dashboard/assets/js/plugins/moment.min.js';
-// import '../material-dashboard/assets/js/plugins/bootstrap-datetimepicker.min.js';
-// import '../material-dashboard/assets/js/plugins/nouislider.min.js';          already in now ui kit
