@@ -17,5 +17,7 @@ resources/material-dashboard
 Notes.txt
 resources/now-ui-dashboard/
 Raw_files/AdminLTE-2.4.5/
-public/user/bower_components  
-public/admin/  
+public/users
+public/users/bower_components  
+public/admin/
+/junk/
