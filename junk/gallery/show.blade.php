@@ -1,4 +1,3 @@
-{{-- {{$gallery}} --}}
 @extends('layouts.app')
 <div class="section section-navbars">
     <div id="navbar">

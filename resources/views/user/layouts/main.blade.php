@@ -1,5 +1,4 @@
-@extends('user.layouts.app')
-@section('main')
+              <!-- =============================================== -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -47,4 +46,3 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-@endsection

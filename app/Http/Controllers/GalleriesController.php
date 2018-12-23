@@ -29,7 +29,7 @@ class GalleriesController extends Controller
     public function index()
     {
         $galleries = Gallery::orderBy('updated_at','desc')->paginate(10);
-        return view('gallery.index')->with('galleries',$galleries);
+        return view('user.gallery.index')->with('galleries',$galleries);
     }
 
     /**
@@ -39,7 +39,7 @@ class GalleriesController extends Controller
      */
     public function create()
     {
-        return view('gallery.create');
+        return view('user.gallery.create');
     }
 
     /**
@@ -87,7 +87,7 @@ class GalleriesController extends Controller
     public function edit($id)
     {
         $gallery = Gallery::find($id);
-        return view('gallery.edit')->with('gallery', $gallery);
+        return view('user.gallery.edit')->with('gallery', $gallery);
     }
 
     /**
