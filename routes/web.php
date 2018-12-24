@@ -27,7 +27,10 @@ Route::resource('pages','PagesController');
 Route::resource('posts', 'PostsController');
 
 // route for userprofile including full CRUD resources
-Route::resource('user/profile ', 'UserProfilesController');
+Route::resource('user/profile', 'UserProfilesController');
+// Route::resource('user/index', 'UserController@index');
+
+
 
 // route for userprofile including full CRUD resources
 Route::resource('user/gallery', 'GalleriesController');
@@ -41,10 +44,7 @@ Route::get('admin/home', function()
     return view('admin.home');
 })->name('post');
 
-Route::get('user/home', function()
-{
-    return view('user.home');
-})->name('post');
+Route::get('user/home', 'userController@index')->name('user');
 
 
 

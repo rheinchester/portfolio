@@ -16,7 +16,7 @@
                         </div>
                     @endif
                     <div class="panel-body">
-                        <a href="/gallery/create" ><button class="btn btn-primmary">Create Gallery</button></a>
+                        <a href="/user/gallery/create" ><button class="btn btn-primmary">Create Gallery</button></a>
                         @if (count($galleries) > 0)
                             <h3>Your Gallery</h3>
                             <table class="table table-striped">
@@ -27,10 +27,9 @@
                             </tr>
                             
                             @foreach ($galleries as $gallery)
-                                {{-- @if (Auth::user()->id == $gallery->user->id) --}}
-                                    <tr>
-                                    <th>{{$gallery->title}}</th>
-                                    <th><a href="/gallery/{{$gallery->id}}/edit" ><button class="btn btn-primary"> Edit</button></a></th>
+                                <tr>
+                                <th>{{$gallery->title}}</th>
+                                    <th><a href="user/gallery/{{$gallery->id}}/edit" ><button class="btn btn-primary"> Edit</button></a></th>
                                     <th>
                                         {!!Form::open([
                                             'action' => ['GalleriesController@destroy', $gallery->id],
@@ -41,7 +40,6 @@
                                         {!! Form::close() !!}
                                     </th>
                                 </tr>    
-                                {{-- @endif --}}
                             @endforeach
                         </table>
                         @else

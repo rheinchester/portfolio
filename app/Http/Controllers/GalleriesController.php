@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Gallery;
+use App\User;
 use Illuminate\Support\Facades\Storage;
 class GalleriesController extends Controller
 {
@@ -28,8 +29,16 @@ class GalleriesController extends Controller
      */
     public function index()
     {
-        $galleries = Gallery::orderBy('updated_at','desc')->paginate(10);
-        return view('user.gallery.index')->with('galleries',$galleries);
+        // $galleries = Gallery::orderBy('updated_at','desc')->paginate(10);
+        // return view('user.gallery.index')->with('galleries',$galleries);
+        $user_id = auth()->user()->id;//For the post fetch user id
+        $user = User::find($user_id); //For the user id fetch user data
+        $data = array(
+            'response' =>'There Are No Galleries Yet',
+            'posts'=> $user->posts,
+            'galleries' => $user->galleries
+        );
+        return view('home')->with($data);
     }
 
     /**

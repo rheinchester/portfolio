@@ -39,7 +39,7 @@ class UserProfilesController extends Controller
      */
     public function create()
     {
-        return view('userProfile.create');
+        return view('user/profile.create');
     }
 
     /**
@@ -71,7 +71,7 @@ class UserProfilesController extends Controller
         $profile->background_image = Controller::upload_image($request, $background_image); 
         $profile->save();
         // return $profile;
-        return redirect('/userProfile')->with('profile', $profile);
+        return redirect('/user/profile')->with('profile', $profile);
     }
 
     /**
@@ -84,7 +84,7 @@ class UserProfilesController extends Controller
     {
         $profile = UserProfile::find(auth()->user()->id);
         // return $profile ;
-        return view('userProfile.show')->with('profile',$profile);
+        return view('user/profile.show')->with('profile',$profile);
     }
     
     /**
@@ -96,7 +96,7 @@ class UserProfilesController extends Controller
     public function edit($id)
     {
         $profile = UserProfile::find(auth()->user()->id);
-        return view('userProfile.edit')->with('profile', $profile);
+        return view('user/profile.edit')->with('profile', $profile);
     }
 
     /**
@@ -131,7 +131,7 @@ class UserProfilesController extends Controller
         $profile->save();
         $data = array('profile' => $profile, 
                         'success'=> 'profile Updated');
-        return redirect('/userProfile')->with($data);
+        return redirect('/user/profile')->with($data);
     }
 
     /**

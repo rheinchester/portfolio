@@ -11,23 +11,23 @@
         <h1>Galleries</h1>
         @if (count($galleries)>0)
             @foreach ($galleries as $gallery)
-                {{-- @if (Auth::user()->id == $gallery->user->id) --}}
+                @if (Auth::user()->id == $gallery->user->id)
                     <div class="card">
                         <div class="row">
                             <div class="col-md-4 col-sm-4">
-                                <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}} ">
+                                <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h3><a href="/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3>    
+                                <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3>    
                                 <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>
                             </div>
                         </div>
                     </div>
-                {{-- @endif --}}
+                @endif
             @endforeach
             {{$galleries->links()}}
         @else
-            <p>No galleries found</p>
+            {{$response}}
         @endif
     </div>
 @endsection
