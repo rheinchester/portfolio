@@ -28,7 +28,11 @@ Route::resource('posts', 'PostsController');
 
 // route for userprofile including full CRUD resources
 Route::resource('user/profile', 'UserProfilesController');
-// Route::resource('user/index', 'UserController@index');
+
+Route::get('user/dashboard', function()
+{
+    return view('user.home');
+});
 
 
 
