@@ -29,7 +29,7 @@ class UserProfilesController extends Controller
         
         $profile = UserProfile::find(auth()->user()->id);
         $profile->galleries = Gallery::all();
-        return view('userProfile.index')->with('profile', $profile);
+        return view('user/profile.index')->with('profile', $profile);
     }
 
     /**

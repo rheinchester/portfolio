@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  @include('user.layouts.head')
+  @include('user.inc.head')
 </head>
 
 <body class="">
@@ -435,7 +435,7 @@
       </footer>
     </div>
   </div>
-  @include('user.layouts.scripts')
+  @include('user.inc.scripts')
 </body>
 
 </html>

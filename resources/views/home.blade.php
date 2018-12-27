@@ -29,7 +29,7 @@
                             @foreach ($galleries as $gallery)
                                 <tr>
                                 <th>{{$gallery->title}}</th>
-                                    <th><a href="user/gallery/{{$gallery->id}}/edit" ><button class="btn btn-primary"> Edit</button></a></th>
+                                    <th><a href="/user/gallery/{{$gallery->id}}/edit" ><button class="btn btn-primary"> Edit</button></a></th>
                                     <th>
                                         {!!Form::open([
                                             'action' => ['GalleriesController@destroy', $gallery->id],
