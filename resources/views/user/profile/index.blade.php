@@ -89,7 +89,7 @@
         @endif
             
         @endforeach
-          
+          {{$profile->galleries->links()}}
           </div>
       </div>
     </div>
