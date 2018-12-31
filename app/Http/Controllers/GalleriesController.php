@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Gallery;
 use App\User;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 class GalleriesController extends Controller
 {
 
@@ -38,7 +39,7 @@ class GalleriesController extends Controller
             'posts'=> $user->posts,
             'galleries' => $user->galleries
         );
-        return view('home')->with($data);
+        return view('user.gallery.index')->with($data);
     }
 
     /**

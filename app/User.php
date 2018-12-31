@@ -45,4 +45,5 @@ class User extends Authenticatable
         // Relates user to his galleries
         return $this->hasMany('App\Gallery');
     }
+    
 }

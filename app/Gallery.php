@@ -13,7 +13,6 @@ class Gallery extends Model
     public function user() {
         //Relates post to user
         return $this->belongsTo('App\User');
-        // return $this->belongsTo('App\User'); >>> For many users
-
+      
     } 
 }
