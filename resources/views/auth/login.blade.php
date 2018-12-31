@@ -22,12 +22,13 @@
     <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
         <div class="container">
             <div class="dropdown button-dropdown">
-                <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+                <a href="#pablo">
+                {{-- <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"> --}}
                     <span class="button-bar"></span>
                     <span class="button-bar"></span>
                     <span class="button-bar"></span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {{-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-header">Dropdown header</a>
                     <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
@@ -36,10 +37,10 @@
                     <a class="dropdown-item" href="#">Separated link</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">One more separated link</a>
-                </div>
+                </div> --}}
             </div>
             <div class="navbar-translate">
-                <a class="navbar-brand" href="http://demos.creative-tim.com/now-ui-kit/index.html" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">
+                <a class="navbar-brand"  href="{{asset('/')}}" rel="tooltip" title="Designed by Palmline inc" data-placement="bottom">
                     Palmport
                 </a>
                 <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +56,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('password.request') }}">
-                            {{ __('Forgot Password?') }}
+                            Forgot Password
                         </a>
                     </li>
                 </ul>
@@ -121,7 +122,7 @@
                             <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block">Get Started</a>
                         </div> --}}
                         <div class="form-group row">
-                            <div class="col-md-6">
+                            <div class="col-md-10">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -140,24 +141,9 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="https://www.creative-tim.com">
+                            {{-- <a href="https://www.creative-tim.com">
                                 Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://presentation.creative-tim.com">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
-                                MIT License
-                            </a>
+                            </a> --}}
                         </li>
                     </ul>
                 </nav>
@@ -165,9 +151,7 @@
                     &copy;
                     <script>
                         document.write(new Date().getFullYear())
-                    </script>, Designed by
-                    <a href="http://www.invisionapp.com" target="_blank">Invision</a>. Coded by
-                    <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+                    </script>, Designed by Palmline inc.
                 </div>
             </div>
         </footer>

@@ -26,8 +26,8 @@ class HomeController extends Controller
     {
         // Fetching post for specific user
         
-        $user_id = auth()->user()->id;//For the post fetch user id
-        $user = User::find($user_id); //For the user id fetch user data
+        $user_id = auth()->user()->id;          //For the post, fetch user id
+        $user = User::find($user_id);           //For the user id, fetch user data
         $data = array(
             'title' =>'Services',
             'response' =>'There are no posts yet',

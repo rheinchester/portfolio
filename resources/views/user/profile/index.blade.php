@@ -18,7 +18,7 @@
   <div class="main">
     <div class="section" style="background-color: #EEEEEE;">
       <div class="col-md-10 ml-auto col-xl-6 mr-auto">
-          <h5 class="category">About me</h5>
+          <h5 class="category">About {{$profile->full_name}} </h5>
           <!-- Nav tabs -->
           <div class="card">
               <!-- padding: 0.75rem 1.25rem -->
@@ -72,39 +72,20 @@
             <i class="now-ui-icons ui-2_settings-90"></i>      What i've done recently    <i class="now-ui-icons ui-2_settings-90"></i>
         </h3>
         <div class="separator separator-primary"></div>
-        <div class="section-story-overview">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="image-container" style="background-image: url('/storage/cover_images/img/login.jpg')"></div>
-                  <br>
-                </p>
-              </div>
-              <!-- Second image on the left side of the article -->
-              <div class="col-md-5">
-                  <h3>So what does the new record for the lowest level of winter ice actually mean</h3>
-                  <p>The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever happens with climate change. Even if the Arctic continues to be one of the fastest-warming regions of the world, it will always be plunged into bitterly cold polar dark every winter. And year-by-year, for all kinds of natural reasons, there’s huge variety of the state of the ice.
-                  </p>
-                </div>
-            </div>
-          </div>
-        <hr>
         @foreach ($profile->galleries as $gallery)
         @if ($profile->id == $gallery->user_id)
-            <div class="section-story-overview">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="image-container" style="background-image: url('/storage/cover_images/{{$gallery->cover_image}}')"></div>
-                    <br>
-                  </p>
-                </div>
-                <!-- Second image on the left side of the article -->
-                <div class="col-md-5">
-                    <h3>{{$gallery->title}}</h3>
-                    <p>{{$gallery->body}}</p>
+
+            <div class="card">
+              <div class="row">
+                  <div class="col-md-4 col-sm-4">
+                      <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
+                  </div>
+                  <div class="col-md-4 col-sm-4">
+                      <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 
+                      <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>
                   </div>
               </div>
-            </div>
-            <hr>
+          </div>
         @endif
             
         @endforeach

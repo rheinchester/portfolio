@@ -18,7 +18,7 @@
                                 <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3>    
+                                <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 
                                 <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>
                             </div>
                         </div>

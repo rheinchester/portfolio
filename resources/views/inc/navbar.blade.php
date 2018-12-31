@@ -49,7 +49,8 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                </div>
+                    <div class="dropdown-divider"></div>
+                    {{-- <a class="dropdown-item" href="/user/profile/{{$profile->id}}/edit ">Edit Profile</a> --}}
             </li>
           @endguest
         </ul>

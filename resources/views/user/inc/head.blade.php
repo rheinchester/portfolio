@@ -12,4 +12,4 @@ Now UI Dashboard by Creative Tim
 <!-- CSS Files -->
 <link href="{{asset('user/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
 <link href="{{asset('user/assets/css/now-ui-dashboard.css?v=1.2.0')}}" rel="stylesheet" />
-
+<link rel="stylesheet" href="{{asset('user/custom.css')}}">

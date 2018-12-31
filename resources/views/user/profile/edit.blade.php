@@ -8,7 +8,7 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header">
-                <h5 class="title">Create Your Profile</h5>
+                <h5 class="title">Edit Your Profile</h5>
             </div>
             <div class="card-body">
                 {!! Form::open([
@@ -97,22 +97,20 @@
     <div class="col-md-4">
             <div class="card card-user">
                 <div class="image">
-                    <img src="../assets/img//bg5.jpg" alt="..." >
+                    <img src="/storage/cover_images/{{$profile->background_image}}" alt="..." >
                 </div>
                 <div class="card-body">
                     <div class="author">
                         <a href="#">
-                            <img class="avatar border-gray" src="../assets/img//mike.jpg" alt="...">
-                            <h5 class="title">Mike Andrew</h5>
+                            <img class="avatar border-gray"src="/storage/cover_images/{{$profile->profile_pic}}" alt="...">
+                            <h5 class="title">{{$profile->full_name}} </h5>
                         </a>
                         <p class="description">
-                            michael24
+                                {{$profile->occupation}}
                         </p>
                     </div>
                     <p class="description text-center">
-                        "Lamborghini Mercy
-                        <br> Your chick she so thirsty
-                        <br> I'm in that two seat Lambo"
+                        {{$profile->short_bio}}
                     </p>
                 </div>
                 <hr>

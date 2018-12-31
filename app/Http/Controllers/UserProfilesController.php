@@ -131,7 +131,7 @@ class UserProfilesController extends Controller
         $profile->save();
         $data = array('profile' => $profile, 
                         'success'=> 'profile Updated');
-        return redirect('/user/profile')->with($data);
+        return view('user/profile.edit')->with($data);
     }
 
     /**

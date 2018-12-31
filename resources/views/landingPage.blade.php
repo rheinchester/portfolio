@@ -28,7 +28,7 @@
           <span class="button-bar"></span>
           <span class="button-bar"></span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        {{-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-header">Dropdown header</a>
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
@@ -37,7 +37,7 @@
           <a class="dropdown-item" href="#">Separated link</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">One more separated link</a>
-        </div>
+        </div> --}}
       </div>
       <div class="navbar-translate">
         <a class="navbar-brand" href="{{asset('/')}}"  rel="tooltip" title="Powered by palmline inc." data-placement="bottom" >

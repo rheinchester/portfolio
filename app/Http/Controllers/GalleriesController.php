@@ -30,16 +30,8 @@ class GalleriesController extends Controller
      */
     public function index()
     {
-        // $galleries = Gallery::orderBy('updated_at','desc')->paginate(10);
-        // return view('user.gallery.index')->with('galleries',$galleries);
-        $user_id = auth()->user()->id;//For the post fetch user id
-        $user = User::find($user_id); //For the user id fetch user data
-        $data = array(
-            'response' =>'There Are No Galleries Yet',
-            'posts'=> $user->posts,
-            'galleries' => $user->galleries
-        );
-        return view('user.gallery.index')->with($data);
+        $galleries = Gallery::orderBy('updated_at','desc')->paginate(10);
+        return view('user.gallery.index')->with('galleries',$galleries);
     }
 
     /**
@@ -85,7 +77,7 @@ class GalleriesController extends Controller
     public function show($id)
     {
         $gallery = Gallery::find($id);
-        return view('gallery.show')->with('gallery', $gallery);
+        return view('user.gallery.show')->with('gallery', $gallery);
     }
 
     /**
@@ -122,7 +114,7 @@ class GalleriesController extends Controller
             $gallery->save();
             $data = array('success'=> 'Gallery Edited',
                         'gallery'=> $gallery);
-            return redirect('/home')->with($data);
+            return view('user.gallery.edit')->with($data);
     }
 
     /**
