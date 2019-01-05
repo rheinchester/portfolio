@@ -32,8 +32,9 @@ class HomeController extends Controller
             'title' =>'Services',
             'response' =>'There are no posts yet',
             'posts'=> $user->posts,
-            'galleries' => $user->galleries
+            'galleries' => $user->galleries()
         );
         return view('home')->with($data);
     }
 }
+    

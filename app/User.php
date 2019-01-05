@@ -43,7 +43,7 @@ class User extends Authenticatable
     public function galleries()
     {
         // Relates user to his galleries
-        return $this->hasMany('App\Gallery');
+        return $this->hasMany('App\Gallery')->paginate(5);
     }
     
 }
