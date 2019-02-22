@@ -24,7 +24,14 @@ class UserProfilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($slug)
+    public function index()
+    {
+        $profile = UserProfile::find(auth()->user()->id);
+        $profile->galleries = Gallery::orderBy('created_at', 'desc')->paginate(5);
+        return view('user/profile.index')->with('profile', $profile);
+    }
+
+    public function handle($slug)
     {
         
         // $profile = UserProfile::find(auth()->user()->id);

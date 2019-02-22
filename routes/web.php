@@ -12,75 +12,19 @@
 
 // Authentication routes including register and login routes
 Auth::routes();
-// landing page controller
-Route::get('/home', 'HomeController@index')->name('home');
 
 // Pages Controller including user index page and contact page
-Route::get('/', 'PagesController@index');               //landing page
-// Route::get('/contact', 'PagesController@contact');      //user contact page
+Route::get('/', 'PagesController@index');                               //landing page
+Route::get('/{slug}', 'UserProfilesController@handle');                 //personal profile page
 
 
-// Pages Controller including user index page and contact page
-Route::resource('pages','PagesController');
+Route::resource('pages','PagesController');                             // Pages resources
 
-// route for posts
-Route::resource('posts', 'PostsController');
-
-// route for userprofile including full CRUD resources
-Route::resource('user/profile', 'UserProfilesController');
-
-Route::get('user/dashboard', function()
-{
-    return view('user.home');
-});
+Route::resource('user/profile', 'UserProfilesController');              // Route for user profile including full CRUD resources
 
 
+Route::resource('user/gallery', 'GalleriesController');                 // Route for user gallery including full CRUD resources
 
-// route for userprofile including full CRUD resources
-Route::resource('user/gallery', 'GalleriesController');
-Route::get('/{id}', 'UserProfilesController@index');           //personal page page
+Route::get('user/home', 'userController@index')->name('user');          // Landing page for user after login
 
-
-
-
-Route::get('admin/home', function()
-{
-    return view('admin.home');
-})->name('post');
-
-Route::get('user/home', 'userController@index')->name('user');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Route::get('/userProfile', 'userProfile@index')->name('home');
-
-// Route::get('/users{id}', function($id)
-// {
-//     return 'this is users'. $id;
-// });
-// Route::get('/welcome', function()
-// {
-//     return view('welcome');
-// });
-// Route::get('/hello', function()
-// {
-//     return view('helloworld');
-// });
+Route::resource('posts', 'PostsController');                            // Route for posts

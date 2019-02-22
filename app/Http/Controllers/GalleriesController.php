@@ -139,7 +139,7 @@ class GalleriesController extends Controller
             $data = array('success'=> 'Gallery Edited',
                         'gallery'=> $gallery);
             return view('user.gallery.edit')->with($data);
-            // return $gallery->slug;
+            // return $gallery;
     }
 
     /**

@@ -2,23 +2,14 @@ To correct:
 our show page has error
 
 To Do:
-Ask user before we delete
-
-Done:
-1)  We have created Work Model
-2)  We have created userprofileindex controller
-
-Plan:
-Create work and userprofile compartmentally and join them together in pages.index
-We might rename pages.index to gallery.index
+1) Ask user before we delete
+2) user logged in navbar i showin in his handle, which i do not want
 
 
-1) compile assets
-2) add to index page
-3) complete stuff
 
 
-I cut the below from gallerycontroller
+
+Codes on probation below:
 
 
 // $user_id = auth()->user()->id;      //For the post fetch user id
@@ -56,3 +47,17 @@ I cut the below from gallerycontroller
     //     // return $profile;
     //     return redirect('/user/profile')->with('profile', $profile);
     // }
+
+
+
+
+    
+// Commented out until i figure out what to do with you.
+
+
+// // landing page controller
+// Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('user/dashboard', function(){                           
+//     return view('user.home');
+// });
