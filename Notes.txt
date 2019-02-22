@@ -5,6 +5,7 @@ To Do:
 1) Ask user before we delete
 2) user logged in navbar i showin in his handle, which i do not want
 3) user doesn't have user name
+4) user name
 
 
 

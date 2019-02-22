@@ -18,6 +18,7 @@ class UserProfile extends Model
     public function gallery()
     {
         // Relates user to his galleries
-        return $this->hasMany('App\Gallery');
+        // return $this->hasMany('App\Gallery');
+        return $this->hasMany('App\Gallery')->orderBy('updated_at','desc')->paginate(5);
     }
 }

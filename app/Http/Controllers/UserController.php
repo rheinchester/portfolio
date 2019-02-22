@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\UserProfile;
 use App\Gallery;
+use App\User;
 
 class UserController extends Controller
 {
@@ -15,9 +16,17 @@ class UserController extends Controller
      */
     public function index()
     {
-        $profile = UserProfile::find(auth()->user()->id);
-        $profile->galleries = Gallery::all();
-        return view('user.home')->with('profile', $profile);
+        $user_id = auth()->user()->id;      //For the post fetch user id
+        $user = User::find($user_id);       //For the user id fetch user data
+        $data = array(
+            'response' =>'There Are No Galleries Yet',
+            'user'=>$user,
+            'posts'=> $user->posts(),
+            'profile' => $user->userProfile, 
+            'galleries' => $user->galleries()
+        );
+        return view('user.home')->with($data);
+        // return $user->userProfile;
     }
 
     /**
