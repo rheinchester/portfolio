@@ -54,7 +54,7 @@
             <div class="col-md-4">
                 <div class="card card-user">
                     <div class="image">
-                        <img src="/storage/cover_images/{{$gallery->cover_image}}" alt="..." >
+                        <img src="/storage/cover_images/files/posts_folder/{{$gallery->cover_image}}" alt="..." >
                     </div>
                     <div class="card-body">
                         {{-- <div class="author">

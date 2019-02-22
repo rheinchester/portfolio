@@ -35,7 +35,7 @@ class GalleriesController extends Controller
         $user_id = auth()->user()->id;          
         $user = User::find($user_id);
         $data = array(
-            'title' =>'Services',
+            'title' =>'Galleries',
             'response' =>'There are no Galleries yet',
             'posts'=> $user->posts,
             'galleries' => $user->galleries()
@@ -53,23 +53,27 @@ class GalleriesController extends Controller
         return view('user.gallery.create');
     }
 
+    
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) //Good except that we are not able to recieve data on the index
+    public function store(Request $request) 
     {
         $this->validate($request, [
-            'title'=>'required',
+            'title'=>'required',//extra validation needed
             'body'=>'required',
             'cover_image'=>'image|nullable|max:1999']);
             $cover_image = 'cover_image';
+            $folder = 'posts_folder'; //consider changing name to folderToStore
             $gallery = new Gallery;
             $gallery->title = $request->input('title');
             $gallery->body = $request->input('body');
             $gallery->user_id = auth()->user()->id;
+            $gallery->slug = Controller::convertToSlug($gallery->title);
             $gallery->cover_image = Controller::upload_image($request, $cover_image); 
             $gallery->save();
             $data = array('success'=> 'Gallery created',
@@ -83,11 +87,18 @@ class GalleriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $gallery = Gallery::find($id);
+        $gallery = Gallery::where('slug', '=', $slug)->first();
         return view('user.gallery.show')->with('gallery', $gallery);
     }
+
+    // public function show($id)
+    // {
+    //         $gallery = Gallery::find($id);  
+    //         return view('user.gallery.show')->with('gallery', $gallery);
+    //         // return $gallery;   
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -108,15 +119,19 @@ class GalleriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+
+    
+    public function update(Request $request, $id){
         $this->validate($request, [
             'title'=>'required',
-            'body'=>'required']);
+            'body'=>'required',
+            ]);
             $cover_image = 'cover_image';
+            $folder = 'posts_folder';
             $gallery = Gallery::find($id);
             $gallery->title = $request->input('title');
             $gallery->body = $request->input('body');
+            $gallery->slug = Controller::convertToSlug($gallery->title);
             if ($request->hasFile($cover_image)) {
                 $gallery->cover_image = Controller::upload_image($request, $cover_image);
             }
@@ -124,6 +139,7 @@ class GalleriesController extends Controller
             $data = array('success'=> 'Gallery Edited',
                         'gallery'=> $gallery);
             return view('user.gallery.edit')->with($data);
+            // return $gallery->slug;
     }
 
     /**

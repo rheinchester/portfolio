@@ -24,12 +24,14 @@ class UserProfilesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($slug)
     {
         
-        $profile = UserProfile::find(auth()->user()->id);
+        // $profile = UserProfile::find(auth()->user()->id);
+        $profile = UserProfile::where('slug', '=', $slug)->first();
         $profile->galleries = Gallery::orderBy('created_at', 'desc')->paginate(5);
         return view('user/profile.index')->with('profile', $profile);
+        // return $profile;    
     }
 
     /**
@@ -70,9 +72,10 @@ class UserProfilesController extends Controller
         $profile->profile_pic = Controller::upload_image($request, $profile_pic); 
         $profile->background_image = Controller::upload_image($request, $background_image); 
         $profile->save();
-        // return $profile;
         return redirect('/user/profile')->with('profile', $profile);
     }
+
+   
 
     /**
      * Display the specified resource.
@@ -80,11 +83,12 @@ class UserProfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)//GOOD
+    public function show($slug)
     {
-        $profile = UserProfile::find(auth()->user()->id);
-        // return $profile ;
-        return view('user/profile.show')->with('profile',$profile);
+        $profile = UserProfile::where('slug', '=', $slug)->first();
+        return view('user/profile/index')->with('profile',$profile);
+        // $profile = UserProfile::find(auth()->user()->id);
+        return $profile ;       
     }
     
     /**

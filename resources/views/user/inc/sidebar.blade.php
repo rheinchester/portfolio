@@ -21,10 +21,10 @@
         <li>
            
         </li>
-        <li>
+        <li>   
             
         </li>
-        <li class="active ">
+        <li>
             <a href="/user/profile">
             <i class="now-ui-icons users_single-02"></i>
             <p>User Profile</p>

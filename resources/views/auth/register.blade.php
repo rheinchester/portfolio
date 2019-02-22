@@ -72,7 +72,7 @@
                         @csrf
                         <div class="header header-primary text-center">
                             <div class="logo-container">
-                                <img src="../assets/img/now-logo.png" alt="">
+                                {{-- <img src="../assets/img/now-logo.png" alt=""> --}}
                             </div>
                         </div>
                         <div class="content">

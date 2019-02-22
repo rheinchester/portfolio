@@ -53,12 +53,12 @@
             <div class="col-md-4">
                 <div class="card card-user">
                     <div class="image">
-                        <img src="../assets/img//bg5.jpg" alt="..." >
+                        <img src="" alt="..." >
                     </div>
                     <div class="card-body">
                         <div class="author">
                             <a href="#">
-                                <img class="avatar border-gray" src="../assets/img//mike.jpg" alt="...">
+                                <img class="avatar border-gray" src="" alt="...">
                                 <h5 class="title">Mike Andrew</h5>
                             </a>
                             <p class="description">

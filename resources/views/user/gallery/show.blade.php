@@ -5,7 +5,7 @@
         <!-- Navbar Danger -->
         <a href="/user/gallery" class="btn btn-primary">Go Back</a>
         <h1>{{$gallery->title}}</h1>
-        <img style="width:50%; max-height: 500px; margin: 0px auto"  src="/storage/cover_images/{{$gallery->cover_image}} ">   
+        <img style="width:50%; max-height: 500px; margin: 0px auto"  src="/storage/cover_images/files/posts_folder/{{$gallery->cover_image}} ">   
         <div>
             {!!$gallery->body!!}
         </div>
@@ -25,4 +25,4 @@
       </div>
     </div>
   </div>
-  
+   

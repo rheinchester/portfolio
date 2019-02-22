@@ -38,7 +38,7 @@ Route::get('user/dashboard', function()
 
 // route for userprofile including full CRUD resources
 Route::resource('user/gallery', 'GalleriesController');
-Route::get('/{id}', 'PagesController@profile');           //personal page page
+Route::get('/{id}', 'UserProfilesController@index');           //personal page page
 
 
 
