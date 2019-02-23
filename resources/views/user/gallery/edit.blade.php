@@ -57,15 +57,6 @@
                         <img src="/storage/cover_images/{{$gallery->cover_image}}" alt="..." >
                     </div>
                     <div class="card-body">
-                        {{-- <div class="author">
-                            <a href="#">
-                                <img class="avatar border-gray" src="../assets/img//mike.jpg" alt="...">
-                                <h5 class="title">Mike Andrew</h5>
-                            </a>
-                            <p class="description">
-                                michael24
-                            </p>
-                        </div> --}}
                         <p class="description">
                             {{$gallery->body}}
                         </p>

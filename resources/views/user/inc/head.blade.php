@@ -13,3 +13,14 @@ Now UI Dashboard by Creative Tim
 <link href="{{asset('user/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
 <link href="{{asset('user/assets/css/now-ui-dashboard.css?v=1.2.0')}}" rel="stylesheet" />
 <link rel="stylesheet" href="{{asset('user/custom.css')}}">
+<style>
+    .palmport-link{
+        color:#2c2c2c;
+        text-decoration: None;
+    }
+    /* .palmport-link:hover, .palmport-link:focus {
+        color: #f96332; }
+    /* a {
+    color: #f96332; } */ */
+    
+</style>

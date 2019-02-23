@@ -24,6 +24,7 @@ Route::resource('user/profile', 'UserProfilesController');              // Route
 
 
 Route::resource('user/gallery', 'GalleriesController');                 // Route for user gallery including full CRUD resources
+// Route::get('user/gallery/{slug}', 'GalleriesController@handle');
 
 Route::get('user/home', 'userController@index')->name('user');          // Landing page for user after login
 

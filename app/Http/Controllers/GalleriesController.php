@@ -78,7 +78,7 @@ class GalleriesController extends Controller
             $gallery->save();
             $data = array('success'=> 'Gallery created',
                         'gallery'=> $gallery);
-            return redirect('/home')->with($data);
+            return redirect('/user/home')->with($data);
     }
 
     /**
@@ -87,18 +87,23 @@ class GalleriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+
+  
+    public function show($id)
     {
-        $gallery = Gallery::where('slug', '=', $slug)->first();
-        return view('user.gallery.show')->with('gallery', $gallery);
+            $gallery = Gallery::find($id);  
+            return view('user.gallery.show')->with('gallery', $gallery);
     }
 
-    // public function show($id)
+
+    // public function handle($slug)
     // {
-    //         $gallery = Gallery::find($id);  
-    //         return view('user.gallery.show')->with('gallery', $gallery);
-    //         // return $gallery;   
+    //     $gallery = Gallery::where('slug', '=', $slug)->first();
+    //     return view('user.gallery.show')->with('gallery', $gallery);
+        
     // }
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -160,6 +165,6 @@ class GalleriesController extends Controller
         }
         $deleted_gallery = $gallery;
         $gallery->delete();
-        return redirect('/home')->with('success', 'Gallery deleted');
+        return redirect('/user/home')->with('success', 'Gallery deleted');
     }
 }

@@ -34,7 +34,7 @@
                             
                             @foreach ($galleries as $gallery)
                                 <tr>
-                                    <th>{{$gallery->title}}</th>
+                                    <th><a href="/user/gallery/{{$gallery->id}}" class="palmport-link" style="text-decoration: none">{{$gallery->title}}</a></th> 
                                     <th><a href="/user/gallery/{{$gallery->id}}/edit" ><button class="btn btn-primary"> Edit</button></a></th>
                                     <th>
                                         {!!Form::open([
@@ -45,7 +45,7 @@
                                             {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
                                             {!! Form::close() !!}
                                     </th>
-                                </tr>    
+                                </tr>
                                 @endforeach
                             </table>
                             @else
