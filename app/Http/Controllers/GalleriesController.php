@@ -168,3 +168,5 @@ class GalleriesController extends Controller
         return redirect('/user/home')->with('success', 'Gallery deleted');
     }
 }
+//  is_string()
+// is_integer()
