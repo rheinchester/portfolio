@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\UserProfile;
 use App\Gallery;
+use App\User;
 
 use Illuminate\Support\Facades\Storage; 
 class UserProfilesController extends Controller
@@ -26,9 +27,20 @@ class UserProfilesController extends Controller
      */
     public function index()
     {
-        $profile = UserProfile::find(auth()->user()->id);
-        $profile->galleries = Gallery::orderBy('created_at', 'desc')->paginate(5);
-        return view('user/profile.index')->with('profile', $profile);
+        // $profile = UserProfile::find(auth()->user()->id);
+        // $profile->galleries = Gallery::orderBy('created_at', 'desc')->paginate(5);
+        // return view('user/profile.index')->with('profile', $profile);
+        $user_id = auth()->user()->id;          
+        $user = User::find($user_id);
+        $data = array(
+            'user'=>$user,
+            'title' =>'Galleries',
+            'response' =>'There are no Galleries yet',
+            'posts'=> $user->posts,
+            'profile' => $user->userProfile, 
+            'galleries' => $user->galleries()
+        );
+        return view('user.profile.index')->with($data);
     }
 
     public function handle($slug)
@@ -62,20 +74,21 @@ class UserProfilesController extends Controller
         $this->validate($request, [
             'full_name' =>'required',
             'occupation' =>'required',
-            'profile_pic' =>'image|nullable|max:1999',
-            'background_image' =>'image|nullable|max:1999'
+            'profile_pic' =>'image|nullable',
+            'background_image' =>'image|nullable'
         ]);
         $profile_pic = 'profile_pic';
         $background_image = 'background_image';
         $profile = new UserProfile;
         $profile->full_name = $request->input('full_name');
+        $profile->slug = Controller::convertToSlug($profile->full_name);
         $profile->occupation = $request->input('occupation');
         $profile->short_message = $request->input('short_message');
         $profile->short_bio = $request->input('short_bio');
         $profile->skills = $request->input('skills');
         $profile->career_stats = $request->input('career_stats');
         $profile->tools = $request->input('tools');
-        $profile->id = auth()->user()->id;
+        $profile->id = $profile->user_id = auth()->user()->id;
         $profile->profile_pic = Controller::upload_image($request, $profile_pic); 
         $profile->background_image = Controller::upload_image($request, $background_image); 
         $profile->save();
@@ -95,7 +108,7 @@ class UserProfilesController extends Controller
         $profile = UserProfile::where('slug', '=', $slug)->first();
         return view('user/profile/index')->with('profile',$profile);
         // $profile = UserProfile::find(auth()->user()->id);
-        return $profile ;       
+        // return $profile ;       
     }
     
     /**

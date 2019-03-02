@@ -15,7 +15,7 @@ Auth::routes();
 
 // Pages Controller including user index page and contact page
 Route::get('/', 'PagesController@index');                               //landing page
-Route::get('/{slug}', 'UserProfilesController@handle');                 //personal profile page
+Route::get('/{slug}', 'HandleController@show');                 //personal profile page
 
 
 Route::resource('pages','PagesController');                             // Pages resources

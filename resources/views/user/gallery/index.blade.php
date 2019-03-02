@@ -8,7 +8,7 @@
                 {{ session('status') }}     
             </div>
         @endif
-        <h1>Galleries</h1>
+        <h1 class="text-center">Galleries</h1>
         @if (count($galleries)>0)
             @foreach ($galleries as $gallery)
                 @if (Auth::user()->id == $gallery->user->id)
@@ -27,7 +27,8 @@
             @endforeach
             {{$galleries->links()}}
         @else
-            {{$response}}
+            <h3 class="text-center"> {{$response}} <a href="/user/gallery/create" ><button class="btn btn-success"> Create Gallery</button></a></h3>   
+            
         @endif
     </div>
 @endsection

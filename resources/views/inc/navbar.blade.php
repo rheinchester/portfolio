@@ -1,3 +1,4 @@
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="400">
     <div class="container">
@@ -50,7 +51,10 @@
                         @csrf
                     </form>
                     <div class="dropdown-divider"></div>
-                    {{-- <a class="dropdown-item" href="/user/profile/{{$profile->id}}/edit ">Edit Profile</a> --}}
+                    <a class="dropdown-item" href="/user/home ">Go home</a>
+                    
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/user/profile/{{Auth::user()->userProfile->id}}/edit ">Edit Profile</a>   
             </li>
           @endguest
         </ul>

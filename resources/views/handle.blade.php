@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-@if ($user->userProfile !== null)
 <div class="page-header" style="max-height:500px">
   <div class="page-header-image" data-parallax="true" style="background-image: url('/storage/cover_images/{{$profile->background_image}}');"></div>
   <div class="container">
@@ -67,15 +66,14 @@
       </div>
     </div>
   </div>
-  
   <div class="section section-about-us">
     <div class="container">
       <h3 class="title text-center">
         <i class="now-ui-icons ui-2_settings-90"></i>      What i've done recently    <i class="now-ui-icons ui-2_settings-90"></i>
       </h3>
       <div class="separator separator-primary"></div>
-      @if (count($galleries) > 0)
-      @foreach ($galleries as $gallery)
+      @foreach ($profile->galleries as $gallery)
+      @if ($profile->id == $gallery->user_id)
       
       <div class="card">
         <div class="row">
@@ -88,51 +86,10 @@
           </div>
         </div>
       </div>
-      @endforeach
-      @else
-      <div class="row">
-        <div class="col-md-12"> <h3 class="text-center">{{$response}} <a href="/user/gallery/create"><button  class="btn btn-success">Create Gallery</button></a> </h3></div>
-      </div>
       @endif
-      {{$galleries->links()}}
-
-    </div>
-  </div>
-</div>
-</div>
-
-@endsection 
-
-@else
-    
-<div class="section section-about-us">
-    <div class="container">
-      <h3 class="title text-center">
-        <i class="now-ui-icons ui-2_settings-90"></i>      You have no Profile  <i class="now-ui-icons ui-2_settings-90"></i>
-      </h3>
-      <div class="separator separator-primary"></div>
-      @if (count($galleries) > 0)
-      @foreach ($galleries as $gallery)
       
-      <div class="card">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 
-            <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>
-          </div>
-        </div>
-      </div>
       @endforeach
-      @else
-        <div class="row">
-          <div class="col-md-12"> <h3 class="text-center"> <a href="/user/profile/create"><button  class="btn btn-success">Create Profile</button></a> </h3></div>
-        </div>
-      @endif
-      {{$galleries->links()}}
-
+      {{$profile->galleries->links()}}
     </div>
   </div>
 </div>
@@ -140,5 +97,3 @@
 
 @endsection
 
-
-@endif

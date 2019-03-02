@@ -67,18 +67,18 @@ class GalleriesController extends Controller
             'title'=>'required',//extra validation needed
             'body'=>'required',
             'cover_image'=>'image|nullable|max:1999']);
-            $cover_image = 'cover_image';
-            $folder = 'posts_folder'; //consider changing name to folderToStore
-            $gallery = new Gallery;
-            $gallery->title = $request->input('title');
-            $gallery->body = $request->input('body');
-            $gallery->user_id = auth()->user()->id;
-            $gallery->slug = Controller::convertToSlug($gallery->title);
-            $gallery->cover_image = Controller::upload_image($request, $cover_image); 
-            $gallery->save();
-            $data = array('success'=> 'Gallery created',
-                        'gallery'=> $gallery);
-            return redirect('/user/home')->with($data);
+        $cover_image = 'cover_image';
+        $folder = 'posts_folder'; //consider changing name to folderToStore
+        $gallery = new Gallery;
+        $gallery->title = $request->input('title');
+        $gallery->body = $request->input('body');
+        $gallery->user_id = auth()->user()->id;
+        $gallery->slug = Controller::convertToSlug($gallery->title);
+        $gallery->cover_image = Controller::upload_image($request, $cover_image); 
+        $gallery->save();
+        $data = array('success'=> 'Gallery created',
+                    'gallery'=> $gallery);
+        return redirect('/user/home')->with($data);
     }
 
     /**
@@ -91,19 +91,20 @@ class GalleriesController extends Controller
   
     public function show($id)
     {
-            $gallery = Gallery::find($id);  
+        if (preg_match("/[a-z]/i", $id)) {
+            // if it has an alphabet, treat it as a slug
+            $gallery = Gallery::where('slug', '=', $id)->first();
             return view('user.gallery.show')->with('gallery', $gallery);
+        }
+        // if it has no alphabet, treat as id
+        $gallery = Gallery::find($id);  
+        $data = array(
+            'gallery'=>$gallery
+        );
+        return view('user.gallery.show')->with($data);
+        // return $gallery->user->userProfile;
+          
     }
-
-
-    // public function handle($slug)
-    // {
-    //     $gallery = Gallery::where('slug', '=', $slug)->first();
-    //     return view('user.gallery.show')->with('gallery', $gallery);
-        
-    // }
-
-
 
     /**
      * Show the form for editing the specified resource.
@@ -168,5 +169,3 @@ class GalleriesController extends Controller
         return redirect('/user/home')->with('success', 'Gallery deleted');
     }
 }
-//  is_string()
-// is_integer()
