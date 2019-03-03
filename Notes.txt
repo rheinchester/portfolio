@@ -1,5 +1,5 @@
 To correct:
-our show page has error
+Our show page has error
 
 To Do:
 1) Ask user before we delete
