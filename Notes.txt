@@ -3,12 +3,12 @@ our show page has error
 
 To Do:
 1) Ask user before we delete
-2) user logged in navbar i showin in his handle, which i do not want
+2) user logged in navbar is showing in his handle, which i do not want
 3) user doesn't have user name
 4) user name
 5) handle no slug exception
-6) find a way to link gallery and profile to Auth:: class
-
+6) Does user need slug?
+7) what should we do about user name
 
 
 

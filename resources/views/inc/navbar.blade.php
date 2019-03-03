@@ -4,11 +4,12 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="{{ url('/') }}">
-          @guest
+          {{-- @guest
             {{ config('app.name', 'Laravel') }}
           @else
             {{ Auth::user()->name }} 
-          @endguest
+          @endguest --}}
+          PalmPort
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar top-bar"></span>
@@ -54,7 +55,9 @@
                     <a class="dropdown-item" href="/user/home ">Go home</a>
                     
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/user/profile/{{Auth::user()->userProfile->id}}/edit ">Edit Profile</a>   
+                    @if (Auth::user()->userProfile !== null)
+                      <a class="dropdown-item" href="/user/profile/{{Auth::user()->userProfile->id}}/edit ">Edit Profile</a>   
+                    @endif
             </li>
           @endguest
         </ul>

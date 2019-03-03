@@ -72,6 +72,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
+                                {{Form::label('profile_pic', 'Profile Picture')}}
                                 {{Form::file('profile_pic')}}
                             </div>  
                         </div>
@@ -79,6 +80,7 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
+                                {{Form::label('background_image', 'Background Image')}}
                                 {{Form::file('background_image')}}
                             </div>
                         </div>

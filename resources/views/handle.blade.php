@@ -72,24 +72,22 @@
         <i class="now-ui-icons ui-2_settings-90"></i>      What i've done recently    <i class="now-ui-icons ui-2_settings-90"></i>
       </h3>
       <div class="separator separator-primary"></div>
-      @foreach ($profile->galleries as $gallery)
-      @if ($profile->id == $gallery->user_id)
-      
-      <div class="card">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 
-            <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>
-          </div>
-        </div>
-      </div>
-      @endif
-      
-      @endforeach
-      {{$profile->galleries->links()}}
+        @foreach ($galleries as $gallery)
+          @if ($profile->id == $gallery->user_id)
+            <div class="card">
+              <div class="row">
+                <div class="col-md-4 col-sm-4">
+                  <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
+                </div>
+                <div class="col-md-4 col-sm-4">
+                  <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 
+                  <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>
+                </div>
+              </div>
+            </div>
+          @endif
+        @endforeach
+        {{$galleries->links()}}
     </div>
   </div>
 </div>

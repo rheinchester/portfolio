@@ -111,26 +111,26 @@
         <i class="now-ui-icons ui-2_settings-90"></i>      You have no Profile  <i class="now-ui-icons ui-2_settings-90"></i>
       </h3>
       <div class="separator separator-primary"></div>
-      @if (count($galleries) > 0)
-      @foreach ($galleries as $gallery)
+      {{-- @if (count($galleries) > 0) --}}
+      {{-- @foreach ($galleries as $gallery)
       
-      <div class="card">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
-          </div>
-          <div class="col-md-4 col-sm-4">
-            <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 
-            <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 
+              <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>
+            </div>
           </div>
         </div>
-      </div>
-      @endforeach
-      @else
+      @endforeach --}}
+      {{-- @else --}}
         <div class="row">
           <div class="col-md-12"> <h3 class="text-center"> <a href="/user/profile/create"><button  class="btn btn-success">Create Profile</button></a> </h3></div>
         </div>
-      @endif
+      {{-- @endif --}}
       {{$galleries->links()}}
 
     </div>
