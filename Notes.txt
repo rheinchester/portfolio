@@ -9,9 +9,10 @@ To Do:
 5) handle no slug exception
 6) Does user need slug?
 7) what should we do about user name
-
-
-
+8) image click to upload
+9) Forgot password   
+10) view full image
+11) log in to view full image(should not be)
 
 Codes on probation below:
 

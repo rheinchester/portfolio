@@ -80,11 +80,12 @@
       <div class="card">
         <div class="row">
           <div class="col-md-4 col-sm-4">
-            <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
+              <a href="/user/gallery/{{$gallery->slug}}" style="text-decoration:none"><img style="width:100%; height:250px; "  src="/storage/cover_images/{{$gallery->cover_image}}"></a>
           </div>
-          <div class="col-md-4 col-sm-4">
-            <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 
-            <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>
+          <div class="col-md-8 col-sm-8">
+            <h3 style="padding:10px"><a href="/user/gallery/{{$gallery->slug}}" style="text-decoration:none">{{$gallery->title}} </a></h3> 
+            <p>{{$gallery->body}}</p>
+            {{-- <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>  --}}
           </div>
         </div>
       </div>

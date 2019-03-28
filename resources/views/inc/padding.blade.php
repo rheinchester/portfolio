@@ -1,4 +1,4 @@
-<!-- Where ever we place this HTML, there will be extra pading -->
+<!-- Whenever we place this HTML, there will be extra pading -->
 <div id="wrapper">
     
     <div id="header">

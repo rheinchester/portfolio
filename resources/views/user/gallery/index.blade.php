@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="row">
                             <div class="col-md-4 col-sm-4">
-                                <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
+                                <img style="width:100%; height:250px; "  src="/storage/cover_images/{{$gallery->cover_image}}">
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 

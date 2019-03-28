@@ -102,8 +102,6 @@ class GalleriesController extends Controller
             'gallery'=>$gallery
         );
         return view('user.gallery.show')->with($data);
-        // return $gallery->user->userProfile;
-          
     }
 
     /**
