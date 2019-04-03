@@ -11,7 +11,7 @@
       <h3 class="title">{{$profile->full_name}} </h3>
       <p class="category">{{$profile->occupation}}</p>
       <div class="content">
-        <h3>{{$profile->short_message}} </h3>
+        <h6>{{$profile->short_message}} </h6>
       </div>
     </div>
   </div>

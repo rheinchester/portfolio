@@ -10,7 +10,7 @@
       <h3 class="title">{{$profile->full_name}} </h3>
       <p class="category">{{$profile->occupation}}</p>
       <div class="content">
-        <h3>{{$profile->short_message}} </h3>
+        <h6>{{$profile->short_message}} </h6>
       </div>
     </div>
   </div>
@@ -80,7 +80,7 @@
                   <img style="width:100%"  src="/storage/cover_images/{{$gallery->cover_image}}">
                 </div>
                 <div class="col-md-4 col-sm-4">
-                  <h3><a href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 
+                  <h3><a style="text-decoration:none" href="/user/gallery/{{$gallery->id}}">{{$gallery->title}} </a></h3> 
                   <small>written on {{$gallery->created_at}} by {{$gallery->user->name}} </small>
                 </div>
               </div>

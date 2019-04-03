@@ -18,7 +18,7 @@ class GalleriesController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['except'=> ['show']] );
     }
 
 
@@ -94,14 +94,15 @@ class GalleriesController extends Controller
         if (preg_match("/[a-z]/i", $id)) {
             // if it has an alphabet, treat it as a slug
             $gallery = Gallery::where('slug', '=', $id)->first();
-            return view('user.gallery.show')->with('gallery', $gallery);
         }
         // if it has no alphabet, treat as id
-        $gallery = Gallery::find($id);  
+        $gallery = Gallery::find($id);
+        // $user = auth()->user()
         $data = array(
             'gallery'=>$gallery
         );
-        return view('user.gallery.show')->with($data);
+        // return view('user.gallery.show')->with($data);
+        return $gallery;
     }
 
     /**

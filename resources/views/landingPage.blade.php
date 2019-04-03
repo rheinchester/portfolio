@@ -51,16 +51,30 @@
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ __('login') }}">Log in</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ __('register') }}">Register</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{{ __('register') }}">Contact</a>
-          </li>
-        </ul>
+           @guest
+            <li class="nav-item">
+              <a class="nav-link" href="{{ __('login') }}">Log in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ __('register') }}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ __('register') }}">Contact</a>
+            </li>
+            @else
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+            </li>
+            @endguest
+          </ul>
       </div>
     </div>
   </nav>
