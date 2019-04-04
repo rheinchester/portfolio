@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('content')
     <body class="landing-page sidebar-collapse">
       <!-- Navbar -->
       </nav>
@@ -34,17 +35,19 @@
             </div>
 
             <hr>
-        <small>written on {{$gallery->created_at}}</small>  
+        <small class="text-center">written on {{$gallery->created_at}}</small>  
         <hr>
-        <a href="/user/gallery/{{$gallery->id}}/edit" class="btn btn-primary">Edit</a>
-        @if (!Auth::guest())
-        {!!Form::open([
-            'action' => ['GalleriesController@destroy', $gallery->id],
-            'method' => 'POST',
-            'class' => 'float-right'])!!}
-          {{Form::hidden('_method', 'DELETE')}}
-          {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
-        {!! Form::close() !!}
-        @endif
-            
+          @if (!Auth::guest())
+            @if (Auth::user()->id == $gallery->user_id)
+              <a href="/user/gallery/{{$gallery->id}}/edit" class="btn btn-primary">Edit</a>
+              {!!Form::open([
+                  'action' => ['GalleriesController@destroy', $gallery->id],
+                  'method' => 'POST',
+                  'class' => 'float-right'])!!}
+                {{Form::hidden('_method', 'DELETE')}}
+                {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
+              {!! Form::close() !!}
+            @endif
+          @endif
+        @endsection
           

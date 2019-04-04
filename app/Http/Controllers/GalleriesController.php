@@ -94,6 +94,10 @@ class GalleriesController extends Controller
         if (preg_match("/[a-z]/i", $id)) {
             // if it has an alphabet, treat it as a slug
             $gallery = Gallery::where('slug', '=', $id)->first();
+            $data = array(
+                'gallery'=>$gallery
+            );
+            return view('user.gallery.show')->with($data);
         }
         // if it has no alphabet, treat as id
         $gallery = Gallery::find($id);
@@ -101,8 +105,8 @@ class GalleriesController extends Controller
         $data = array(
             'gallery'=>$gallery
         );
-        // return view('user.gallery.show')->with($data);
-        return $gallery;
+        return view('user.gallery.show')->with($data);
+        // return $gallery;
     }
 
     /**
