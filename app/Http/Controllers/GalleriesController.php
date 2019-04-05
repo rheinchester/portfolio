@@ -30,8 +30,7 @@ class GalleriesController extends Controller
      */
     public function index()
     {
-        // $galleries = Gallery::orderBy('updated_at','desc')->paginate(10);
-        // return view('user.gallery.index')->with('galleries',$galleries);
+    // check  if this code will work: ---------> user = auth->user(); return $user;  ... I think it will
         $user_id = auth()->user()->id;          
         $user = User::find($user_id);
         $data = array(
@@ -41,6 +40,7 @@ class GalleriesController extends Controller
             'galleries' => $user->galleries()
         );
         return view('user.gallery.index')->with($data);
+       
     }
 
     /**
@@ -92,7 +92,7 @@ class GalleriesController extends Controller
     public function show($id)
     {
         if (preg_match("/[a-z]/i", $id)) {
-            // if it has an alphabet, treat it as a slug
+            // if it has alphabet, treat as slug
             $gallery = Gallery::where('slug', '=', $id)->first();
             $data = array(
                 'gallery'=>$gallery
@@ -106,7 +106,6 @@ class GalleriesController extends Controller
             'gallery'=>$gallery
         );
         return view('user.gallery.show')->with($data);
-        // return $gallery;
     }
 
     /**
@@ -172,3 +171,7 @@ class GalleriesController extends Controller
         return redirect('/user/home')->with('success', 'Gallery deleted');
     }
 }
+
+
+ // $galleries = Gallery::orderBy('updated_at','desc')->paginate(10);
+        // return view('user.gallery.index')->with('galleries',$galleries);
