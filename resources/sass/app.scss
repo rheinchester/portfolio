@@ -1,0 +1,28 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// now-ui-kit
+@import 'node_modules/now-ui-kit/assets/sass/now-ui-kit';
+@import '../css/now-ui-kit.css';
+@import '../css/demo.css';
+@import '../css/bootstrap.min.css';
+
+
+// // material-dashboard
+// @import '../material-dashboard/assets/css/material-dashboard.css';
+// @import '../material-dashboard/assets/scss/material-dashboard';
+
+// Custom
+@import 'custom';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
