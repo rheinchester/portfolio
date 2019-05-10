@@ -1,6 +1,8 @@
 {
     "private": true,
     "scripts": {
+        "format": "prettier --write \" src/**/*.{js, jsx, css, html, json}\" ",
+        "format:check": "prettier -l \" src/**/*.{js, jsx, css, html, json}\" ",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
@@ -11,21 +13,28 @@
     },
     "devDependencies": {
         "axios": "^0.18",
-        "babel-preset-react": "^6.23.0",
+        "babel-core": "^6.26.3",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
+        "prettier": "^1.17.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0"
     },
     "dependencies": {
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.16.0",
         "gulp-sass": "^4.0.2",
         "material-dashboard": "^2.1.0",
         "node-sass": "^4.12.0",
         "nodemon": "^1.18.6",
-        "now-ui-kit": "^1.1.0"
+        "now-ui-kit": "^1.1.0",
+        "parcel-bundler": "^1.12.3"
     }
 }

@@ -66,3 +66,4 @@ Codes on probation below:
 // Route::get('user/dashboard', function(){                           
 //     return view('user.home');
 // });
+

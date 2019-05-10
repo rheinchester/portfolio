@@ -28,9 +28,9 @@ Route::resource('user/gallery', 'GalleriesController');                 // Route
 
 Route::get('user/home', 'userController@index')->name('user');          // Landing page for user after login
 
-Route::get('admin/home', function ()
+Route::get('/example', function ()
 {
-   return view('admin.home');
+   return view('react');
 });
 
 
