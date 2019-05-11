@@ -28,7 +28,7 @@ If you discover a security vulnerability or bug within the project, please conta
  If also you feel you can add more to the project, feel free to contact the author
 
 ## License
-The this project is  licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The this project is  licensed under the [GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
 
 
 <!-- 
