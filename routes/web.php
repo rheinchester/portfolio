@@ -26,14 +26,14 @@ Route::resource('user/profile', 'UserProfilesController');              // Route
 Route::resource('user/gallery', 'GalleriesController');                 // Route for user gallery including full CRUD resources
 // Route::get('user/gallery/{slug}', 'GalleriesController@handle');
 
-Route::get('user/home', 'userController@index')->name('user');          // Landing page for user after login
+Route::get('user/home', 'UserController@index')->name('user');          // Landing page for user after login
 
-Route::get('/example', function ()
+
+
+Route::get('/test/example', function ()
 {
    return view('react');
 });
-
-
 // Socialite Oauth route google
 Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');

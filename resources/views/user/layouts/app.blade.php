@@ -10,7 +10,7 @@
             <div class="main-panel">
             <!-- Navbar -->
                 @include('user.inc.navbar')
-                @include('inc.messages')
+                {{-- @include('inc.messages') --}}
                 @section('content')
                     @show
                 <footer class="footer">

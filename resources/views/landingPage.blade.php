@@ -58,9 +58,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ __('register') }}">Register</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ __('register') }}">Contact</a>
-            </li>
+           
             @else
             <li class="nav-item">
               <a class="nav-link" href="{{ route('logout') }}"

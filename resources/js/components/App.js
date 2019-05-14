@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Todos from './Todos';
+import Header from './Header';
+import Footer from './Footer';
+
 
 
 
@@ -27,6 +30,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+      <Header/>
         <div className="row justify-content-center">
           <div className="col-md-8">
             <div className="card">
@@ -35,11 +39,11 @@ class App extends Component {
             </div>
           </div>
         </div>
+      <Footer/>
       </div>
     );
   }
 }
 
-
-ReactDOM.render(<App />, document.getElementById('example'));
+ReactDOM.render(<App />, document.getElementById('app'));
 export default App

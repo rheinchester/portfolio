@@ -25,7 +25,8 @@
         "popper.js": "^1.12",
         "prettier": "^1.17.0",
         "react": "^16.2.0",
-        "react-dom": "^16.2.0"
+        "react-dom": "^16.2.0",
+        "react-router-dom": "^5.0.0"
     },
     "dependencies": {
         "babel-eslint": "^10.0.1",

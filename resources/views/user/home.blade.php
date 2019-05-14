@@ -4,13 +4,14 @@
 {{-- This is where we will keep our landing page --}}
 @section('content')
     <div class="panel-header panel-header-sm">
-            @if (session('status'))
+            {{-- @if (session('status'))
             <div class="alert alert-success" role="alert">
                 {{ session('status') }}     
             </div>
-        @endif
+        @endif --}}
     </div>
     <div class="content">
+        @include('inc.messages')    
        <div class="row">
            <div class="col-md-8">
             <div class="card">

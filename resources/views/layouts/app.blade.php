@@ -6,6 +6,7 @@
     @include('inc.navbar')
     @include('inc.messages')
       @yield('content')
-    @include('inc.bottom')   
+    @include('inc.bottom')
+    <script src="./resources/js/components/App.js"></script>
   </body>
 </html>
