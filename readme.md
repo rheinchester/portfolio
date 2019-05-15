@@ -25,7 +25,7 @@ Development is still in progress, although almost done.......
 If you discover a security vulnerability or bug within the project, please contact the author by email as written above.
 
 ## Contribution
- If also you feel you can add more to the project, feel free to contact the author
+ If also you believe you can add more to the project, feel free to contact the author
 
 ## License
 This project is  licensed under the [GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html).
