@@ -13,7 +13,7 @@ Development is still in progress, although almost done.......
 - Laravel (back-end)
 - React 
 - HTML & CSS
-- Themed from [Creative-Tim](https://www.creative-tim.com).
+- Themed : [Creative-Tim](https://www.creative-tim.com).
 
 
 ## Author
