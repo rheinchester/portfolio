@@ -17,8 +17,9 @@ Development is still in progress, although almost done.......
 
 
 ## Author
- Name: Jacob okoro
- Contact: jaycobokoro@gmail.com
+Name: Jacob okoro
+
+Contact: jaycobokoro@gmail.com
 
 ## Security Vulnerabilities
 
