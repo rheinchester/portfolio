@@ -19,6 +19,8 @@ Development is still in progress, although almost done.......
 ## Author
 Name: Jacob okoro
 
+Github: https://github.com/rheinchester
+
 Contact: jaycobokoro@gmail.com
 
 ## Security Vulnerabilities
