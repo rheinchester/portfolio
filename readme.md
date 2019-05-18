@@ -27,7 +27,7 @@ All you need do is:
 
 4) Add your work
 
-5)Enter your profile name at the end of the url to view your profile (Something like linkedin).
+5) Enter your profile name at the end of the url to view your profile (Something like linkedin).
     Eg: www.portfolio.net/YOUR-USERNAME
 
 ## Author
