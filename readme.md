@@ -16,6 +16,20 @@ Development is still in progress, although almost done.......
 - Theme : [Creative-Tim](https://www.creative-tim.com).
 
 
+
+##Use
+All you need do is:
+1) Register,
+
+2) Login, 
+
+3) Complete your profile, 
+
+4) Add your work
+
+5)Enter your profile name at the end of the url to view your profile (Something like linkedin).
+    Eg: www.portfolio.net/YOUR-USERNAME
+
 ## Author
 Name: Jacob okoro
 
