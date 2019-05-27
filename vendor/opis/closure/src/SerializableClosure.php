@@ -1,6 +1,6 @@
 <?php
 /* ===========================================================================
- * Copyright (c) 2018 Zindex Software
+ * Copyright (c) 2018-2019 Zindex Software
  *
  * Licensed under the MIT License
  * =========================================================================== */
@@ -203,8 +203,13 @@ class SerializableClosure implements Serializable
 
             $data = $data['closure'];
         } elseif ($data[0] === '@') {
-            throw new SecurityException("The serialized closure is signed. ".
-                "Make sure you use a security provider for both serialization and unserialization.");
+            $data = json_decode(substr($data, 1), true);
+
+            if (!is_array($data) || !isset($data['closure']) || !isset($data['hash'])) {
+                throw new SecurityException('Invalid signed closure');
+            }
+
+            $data = $data['closure'];
         }
 
         $this->code = \unserialize($data);
@@ -332,6 +337,7 @@ class SerializableClosure implements Serializable
     /**
      * Wrap closures
      *
+     * @internal
      * @param $data
      * @param ClosureScope|SplObjectStorage|null $storage
      */
@@ -386,7 +392,7 @@ class SerializableClosure implements Serializable
                     break;
                 }
                 foreach ($reflection->getProperties() as $property){
-                    if($property->isStatic()){
+                    if($property->isStatic() || !$property->getDeclaringClass()->isUserDefined()){
                         continue;
                     }
                     $property->setAccessible(true);
@@ -405,6 +411,7 @@ class SerializableClosure implements Serializable
     /**
      * Unwrap closures
      *
+     * @internal
      * @param $data
      * @param SplObjectStorage|null $storage
      */
@@ -448,7 +455,7 @@ class SerializableClosure implements Serializable
                     break;
                 }
                 foreach ($reflection->getProperties() as $property){
-                    if($property->isStatic()){
+                    if($property->isStatic() || !$property->getDeclaringClass()->isUserDefined()){
                         continue;
                     }
                     $property->setAccessible(true);
@@ -464,6 +471,7 @@ class SerializableClosure implements Serializable
 
     /**
      * Internal method used to map closure pointers
+     * @internal
      * @param $data
      */
     protected function mapPointers(&$data)
@@ -514,7 +522,7 @@ class SerializableClosure implements Serializable
                     break;
                 }
                 foreach ($reflection->getProperties() as $property){
-                    if($property->isStatic()){
+                    if($property->isStatic() || !$property->getDeclaringClass()->isUserDefined()){
                         continue;
                     }
                     $property->setAccessible(true);
@@ -537,6 +545,7 @@ class SerializableClosure implements Serializable
     /**
      * Internal method used to map closures by reference
      *
+     * @internal
      * @param   mixed &$data
      */
     protected function mapByReference(&$data)
@@ -605,7 +614,7 @@ class SerializableClosure implements Serializable
                     break;
                 }
                 foreach ($reflection->getProperties() as $property){
-                    if($property->isStatic()){
+                    if($property->isStatic() || !$property->getDeclaringClass()->isUserDefined()){
                         continue;
                     }
                     $property->setAccessible(true);
