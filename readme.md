@@ -7,6 +7,7 @@ A web application where individuals can display their work, for appreciation, va
 - Quick upload
 - Clean interface
 
+# Status
 Development is still in progress, although almost done.......
 
 # Tech involved
