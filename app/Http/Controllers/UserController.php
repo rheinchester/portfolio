@@ -9,6 +9,17 @@ use App\User;
 
 class UserController extends Controller
 {
+
+    /**
+     * Display a listing of the resource.
+     *
+     * Redirects if nor logged in
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *

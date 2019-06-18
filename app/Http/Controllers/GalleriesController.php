@@ -101,7 +101,6 @@ class GalleriesController extends Controller
         }
         // if it has no alphabet, treat as id
         $gallery = Gallery::find($id);
-        // $user = auth()->user()
         $data = array(
             'gallery'=>$gallery
         );

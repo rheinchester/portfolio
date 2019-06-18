@@ -33,19 +33,6 @@ class Controller extends BaseController
         return $fileNameToStore;
     }
 
-    public static function file_upload(Request $request, $folder, $file){   
-        if ($request->hasFile($file)) {
-           $fileNameWithExt = $request->file($file)->getClientOriginalName();                               //1
-           $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);                                       //2
-           $extension = $request->file($file)->getClientOriginalExtension();                                //3
-           $fileNameToStore = $fileName.'_'.time().'.'.$extension;                                          //4
-           $path =  $request->file($file)->storeAs('public/cover_images/files/'.$folder, $fileNameToStore); //5
-       } else {
-           $fileNameToStore = 'noimage.jpg';
-       }
-       return $fileNameToStore;
-   }
-
    public static function convertToSlug($string) {
         return str_replace(' ', '-', strtolower($string));
     }

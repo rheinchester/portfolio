@@ -1,6 +1,10 @@
 @extends('user.layouts.app')
 @section('content')
-
+{{--  @if (!Auth::guest())
+            @if (Auth::user()->id == $gallery->user_id)
+              
+            @endif
+          @endif  --}}
 <div class="panel-header panel-header-sm"></div>
 <div class="content">
     <div class="row">

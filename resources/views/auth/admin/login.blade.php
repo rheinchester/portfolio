@@ -45,7 +45,7 @@
                         <a class="nav-link" href="{{ __('register') }}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('password.request') }}">
+                        <a class="nav-link" href="{{ route('admin.password.request') }}">
                             Forgot Password
                         </a>
                     </li>
@@ -59,11 +59,11 @@
         <div class="container">
             <div class="col-md-4 content-center">
                 <div class="card card-login card-plain">
-                    <form class="form" method="POST" action="{{ route('login') }}">
+                    <form class="form" method="POST" action="{{ route('admin.login.submit') }}">
                         @csrf
                         <div class="header header-primary text-center">
                             <div class="logo-container">
-                                User
+                                Admin
                             </div>
                         </div>
                         <div class="content">

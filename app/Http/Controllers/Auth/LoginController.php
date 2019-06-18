@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -33,9 +34,8 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+    public function __construct(){
+        $this->middleware('guest')->except(['logout','userLogout']);
     }
 
     /**
@@ -43,8 +43,7 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function redirectToProvider()
-    {
+    public function redirectToProvider(){
         return Socialite::driver('facebook')->redirect();
     }
 
@@ -53,10 +52,18 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
-    {
+    public function handleProviderCallback(){
         $user = Socialite::driver('facebook')->user();
 
         return $user->name;
     }
+
+    public function userLogout(){
+        // session flush logs out of all accounts including user and admin
+        // $request->session()->flush();
+        // $request->session()->regenerate();
+        Auth::guard('admin')->logout();
+        return redirect('/');
+    }
+
 }
