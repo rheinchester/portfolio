@@ -7,6 +7,7 @@ use App\UserProfile;
 use App\Gallery;
 use App\User;
 
+
 use Illuminate\Support\Facades\Storage; 
 class UserProfilesController extends Controller
 {
@@ -17,7 +18,7 @@ class UserProfilesController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('edit');
     }
     
     /**
@@ -91,6 +92,9 @@ class UserProfilesController extends Controller
         $profile->id = $profile->user_id = auth()->user()->id;
         $profile->profile_pic = Controller::upload_image($request, $profile_pic); 
         $profile->background_image = Controller::upload_image($request, $background_image); 
+        $user = auth()->user();
+        //$user->userProfile->save($profile);
+        $profile->user()->associate($user);
         $profile->save();
         return redirect('/user/profile')->with('profile', $profile);
     }
@@ -119,8 +123,9 @@ class UserProfilesController extends Controller
      */
     public function edit($id)
     {
-        $profile = UserProfile::find(auth()->user()->id);
-        return view('user/profile.edit')->with('profile', $profile);
+        $profile = UserProfile::find($id);
+        $user = auth()->user();
+        return view('user/profile.edit')->with('profile', $profile)->withUser($user);
     }
 
     /**

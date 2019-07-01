@@ -1,8 +1,7 @@
-
 @extends('user.layouts.app')
 @section('content')
 <div class="panel-header panel-header-sm">
-    </div>
+</div>
 <div class="content">
 <div class="row">
     <div class="col-md-8">
@@ -20,14 +19,14 @@
                             <div class="form-group">
                                 {{Form::label('full_name', 'Full name')}}
                                 {{-- 'name', 'value', 'attributes' --}}
-                                {{Form::text('full_name', $profile->full_name, ['class' => 'form-control', 'placeholder'=>'Full Name'])}}
+                                {{Form::text('full_name', $profile->full_name, ['class' => 'form-control', 'placeholder'=>'Full Name', $user->role_id == 1 ? 'readonly' : " "])}}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 {{Form::label('occupation', 'Occupation')}}
                                 {{-- 'name', 'value', 'attributes' --}}
-                                {{Form::text('occupation', $profile->occupation, ['class' => 'form-control', 'placeholder'=>"Occupation"])}}
+                                {{Form::text('occupation', $profile->occupation, ['class' => 'form-control', 'placeholder'=>"Occupation", $user->role_id == 1 ? 'readonly' : " "])}}
                             </div>
                         </div>
                     </div>
@@ -36,7 +35,9 @@
                             <div class="form-group">
                                 {{Form::label('short_message', 'Short Message')}}
                                 {{-- 'name', 'value', 'attributes' --}}
-                                {{Form::text('short_message', $profile->short_message, ['class' => 'form-control', 'placeholder'=>""])}}
+                                {{Form::text('short_message', $profile->short_message, 
+                                    ['class' => 'form-control', 'placeholder'=>"", 
+                                    $user->role_id == 1 ? 'readonly' : " "])}}
                             </div>
                         </div>
                         
@@ -45,13 +46,15 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 {{Form::label('', 'Tools')}}
-                                {{Form::textarea('tools', $profile->tools, ['class' => 'form-control', 'placeholder'=>''])}}
+                                {{Form::textarea('tools', $profile->tools, ['class' => 'form-control', 'placeholder'=>'',$user->role_id == 1 ? 'readonly' : " "])}}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 {{Form::label('', 'Skills')}}
-                                {{Form::textarea('skills', $profile->skills, ['class' => 'form-control', 'placeholder'=>''])}}
+                                {{Form::textarea('skills', $profile->skills, 
+                                    ['class' => 'form-control', 'placeholder'=>'', 
+                                    $user->role_id == 1 ? 'readonly' : " "])}}
                             </div>
                         </div>
                     </div>
@@ -59,13 +62,17 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 {{Form::label('', 'Career Highlight')}}
-                                {{Form::textarea('career_stats', $profile->career_stats, ['class' => 'form-control', 'placeholder'=>''])}}
+                                {{Form::textarea('career_stats', $profile->career_stats, 
+                                ['class' => 'form-control', 'placeholder'=>'', 
+                                $user->role_id == 1 ? 'readonly' : " "])}}
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 {{Form::label('short_bio', 'Short Bio')}}
-                                {{Form::textarea('short_bio', $profile->short_bio, ['class' => 'form-control', 'placeholder'=>''])}}
+                                {{Form::textarea('short_bio', $profile->short_bio, 
+                                ['class' => 'form-control', 'placeholder'=>'', 
+                                $user->role_id == 1 ? 'readonly' : " "])}}
                             </div>
                         </div>
                     </div>
@@ -73,7 +80,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                {{Form::file('profile_pic')}}
+                                {{Form::file('profile_pic'), $user->role_id == 1 ? 'readonly' : " "}}
                             </div>  
                         </div>
                         
@@ -87,7 +94,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             {{Form::hidden('_method', 'PUT')}}
-                            {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
+                            {{ $user->role_id == 1 ? ' ' : " Form::submit('Submit', ['class'=>'btn btn-primary'])" }}
                         </div>
                     </div>
                 {!! Form::close() !!}

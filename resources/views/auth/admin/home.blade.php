@@ -48,17 +48,21 @@
                   <th>Email</th>
                   <th>Occupation</th>
                   <th>Number of galleries</th>
+                  <th>Profile Id</th>
                 </tr>
                 @foreach ($users as $user)
                   <tr>
                     <td>{{$user->id}}</td>
-                    <td><a href="/user/profile/{{$user->id}}/edit">{{$user->name}}</a></td>
+                    <td><a href="/{{$user->userProfile->slug}}">{{$user->name}}</a></td>
+                    {{--  @foreach($profiles as $profile)  --}}
                     <td>
-                      {{-- {{$user->profile->username}} --}}
+                       {{$user->userProfile->slug}} 
                     </td>
+                    {{--  @endforeach  --}}
                     <td> {{$user->email}}</td>
-                    <td> </td>
-                    <td> </td>
+                    <td>{{$user->userProfile->occupation}} </td>
+                    <td>{{count($user->galleries())}} </td>
+                    <td>{{$user->userProfile->id}} </td>
                         
                   </tr>
                 @endforeach

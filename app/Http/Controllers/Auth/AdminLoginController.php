@@ -34,9 +34,8 @@ class AdminLoginController extends Controller
         ]);
         // Attempt to login user with credentials, where remember 
         // set up across multiple sessions From the admin guard
-        $credentials =  [
-                        'email' => $request->email, 
-                        'password' => $request->password];
+        $credentials =  ['email' => $request->email, 
+                          'password' => $request->password];
                         
         if (Auth::guard('admin')->attempt($credentials, $request->remember)) {
             // If successful then atttempt to login to intended location, instead of starting all over

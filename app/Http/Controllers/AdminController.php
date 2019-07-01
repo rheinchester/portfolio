@@ -24,9 +24,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('updated_at','asc')->paginate(10);
-        $data = array('users'=> $users);
-        return view('auth.admin.home')->with($data);
+        $users = User::where('role_id',2)->paginate(10);
+        return view('auth.admin.home',compact(['users','profile']));
+        
+        
     }
 
     public function showUser($id){

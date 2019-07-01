@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\AdminResetPasswordNotification;
 
 class Admin extends Authenticatable
-{
+{ 
     use HasApiTokens,  Notifiable ;
 
     protected $guard = 'admin';
