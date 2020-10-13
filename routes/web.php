@@ -12,7 +12,9 @@
 
 // User Authentication routes, including register and login 
 Auth::routes();
-
+Route::resource('posts', 'PostsController');                                    // Route for posts
+Route::get('/{slug}', 'HandleController@show');                                 //personal profile page
+Route::get('/landingPage', 'LandingPageController@populate');
 Route::get('/', 'PagesController@index');                                       //landing
 
 // User related routes      
@@ -39,5 +41,4 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/password/reset','Auth\AdminResetPasswordController@reset')->name('admin.password.update');
     Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 });
-Route::resource('posts', 'PostsController');                                    // Route for posts
-Route::get('/{slug}', 'HandleController@show');                                 //personal profile page
+

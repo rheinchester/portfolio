@@ -84,7 +84,6 @@
                             </div>  
                         </div>
                         
-
                         <div class="col-md-6">
                             <div class="form-group">
                                 {{Form::file('background_image')}}
@@ -113,7 +112,7 @@
                             <h5 class="title">{{$profile->full_name}} </h5>
                         </a>
                         <p class="description">
-                                {{$profile->occupation}}
+                            {{$profile->occupation}}
                         </p>
                     </div>
                     <p class="description text-center">
@@ -134,6 +133,6 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
 </div>
 @endsection

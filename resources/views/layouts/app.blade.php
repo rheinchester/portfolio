@@ -7,6 +7,6 @@
     @include('inc.messages')
       @yield('content')
     @include('inc.bottom')
-    <script src="./resources/js/components/App.js"></script>
+    {{-- <script src="./resources/js/components/App.js"></script> --}}
   </body>
 </html>

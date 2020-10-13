@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 class AdminLoginController extends Controller
 {
     /**
@@ -19,6 +19,7 @@ class AdminLoginController extends Controller
      * 
      */
     public function showLoginForm(){
+        // return view('auth.admin-login');
         return view('auth.admin.login');
     }
 

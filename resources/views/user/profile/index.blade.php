@@ -71,7 +71,7 @@
   <div class="section section-about-us">
     <div class="container">
       <h3 class="title text-center">
-        <i class="now-ui-icons ui-2_settings-90"></i>      What i've done recently    <i class="now-ui-icons ui-2_settings-90"></i>
+        <i class="now-ui-icons ui-2_settings-90"></i>      What ive done recently    <i class="now-ui-icons ui-2_settings-90"></i>
       </h3>
       <div class="separator separator-primary"></div>
       @if (count($galleries) > 0)

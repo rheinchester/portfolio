@@ -143,10 +143,11 @@ class GalleriesController extends Controller
                 $gallery->cover_image = Controller::upload_image($request, $cover_image);
             }
             $gallery->save();
-            $data = array('Success'=> 'Gallery Edited',
-                        'gallery'=> $gallery);
+            $data = array(
+                'Success'=> 'Gallery Edited',
+                'gallery'=> $gallery
+            );
             return view('user.gallery.edit')->with($data);
-            // return $data;
     }
 
     /**

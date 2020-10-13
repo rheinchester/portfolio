@@ -29,7 +29,7 @@
                             
                             @foreach ($galleries as $gallery)
                                 <tr>
-                                    <th><a href="/user/gallery/{{$gallery->slug}}" class="palmport-link" style="text-decoration: none">{{$gallery->title}}</a></th> 
+                                    <th><a href="   " class="palmport-link" style="text-decoration: none">{{$gallery->title}}</a></th> 
                                     <th><a href="/user/gallery/{{$gallery->id}}/edit" ><button class="btn btn-primary"> Edit</button></a></th>
                                     <th>
                                         {!!Form::open([
