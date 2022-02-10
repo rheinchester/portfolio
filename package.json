@@ -33,7 +33,7 @@
         "eslint": "^5.16.0",
         "gulp-sass": "^4.0.2",
         "material-dashboard": "^2.1.0",
-        "node-sass": "^4.12.0",
+        "node-sass": "^7.0.0",
         "nodemon": "^1.18.6",
         "now-ui-kit": "^1.1.0",
         "parcel-bundler": "^1.12.3"
